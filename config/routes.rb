@@ -1,4 +1,8 @@
 Wikikeep::Application.routes.draw do
+  resources :tags
+
+  resources :content_items
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

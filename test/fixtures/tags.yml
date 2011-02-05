@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+ruby:
+  id:   1
+  name: Ruby
+
+websites:
+  id:   2
+  name: WebSites 
