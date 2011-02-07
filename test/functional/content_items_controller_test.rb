@@ -1,8 +1,12 @@
 require 'test_helper'
 
 class ContentItemsControllerTest < ActionController::TestCase
+  fixtures :site_users
+  set_fixture_class :site_users => "User"
+
   setup do
     @content_item = content_items(:wikikeep)
+    @tag = site_users(:johnsmith)
   end
 
   test "should get index" do

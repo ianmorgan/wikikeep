@@ -1,10 +1,14 @@
 Wikikeep::Application.routes.draw do
 
+  resources :users
+
   root :controller => 'home', :action => 'index'
 
   resources :tags
 
   resources :content_items
+
+  match 'login/:action(/:id)', :controller => 'login'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
