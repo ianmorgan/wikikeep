@@ -1,0 +1,10 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+johnsmith:
+  id:          1
+  user_name:   johnsmith
+  given_names: John 
+  family_name: Smith 
+  password_hash: password
+
+
