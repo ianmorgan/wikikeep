@@ -2,7 +2,7 @@ require 'test_helper'
 
 class ContentItemsControllerTest < ActionController::TestCase
   setup do
-    @content_item = content_items(:one)
+    @content_item = content_items(:wikikeep)
   end
 
   test "should get index" do
