@@ -1,0 +1,56 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+       "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+  <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+  <title>WikiKeep - <%= controller.action_name.capitalize %></title>
+  
+  <%= stylesheet_link_tag 'public' %>
+  <%= stylesheet_link_tag 'ie6_tweaks' if ie6? %>  
+</head>
+<body>
+
+<div id="page">
+    <div id="topheader">
+      <div id="headercontent">
+       <div id="headermenu">
+	   <ul>
+		<li><%= link_to "Home", :controller => :home, :action => :index %></li>
+		
+	    </ul>
+       </div>
+		
+     </div>
+   </div>
+  
+   <div id="navigation">
+    <ul>
+      <li><%= link_to "Home", :controller => :home, :action => :index %></li>
+     </ul>
+   </div>
+   
+   
+   <table width="100%" style="margin-top:5px;" > 
+    <tr>
+     <td valign="top">
+       <div id="pagecontent">
+          <%= yield %>
+       </div>
+     </td>
+     <td width="260px" valign="top">
+       <div id="infopanel">
+
+todo
+    
+
+   </div>
+   </td>
+</tr>
+</table>
+   
+  
+</div>
+
+</body>
+</html>
