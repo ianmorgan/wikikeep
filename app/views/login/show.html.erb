@@ -1,5 +1,6 @@
 <h1>Member Login</h1>
 	
+<%= render "shared/error_messages", :target => @user %>
 <%= form_tag({:action => :login}) do %>  
     <p>
       User name: <%= text_field_tag 'user_name' %>

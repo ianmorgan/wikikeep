@@ -213,4 +213,10 @@ h3 {
   color:#101010;
   text-decoration:none;
   background-color: rgb(229,25,55);
-}page
+}
+
+.errormessage {
+  color:red;
+  font-size:1.2em;
+  
+}

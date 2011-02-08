@@ -2,7 +2,6 @@ class LoginController < ApplicationController
    
    def show
    	render :view => 'show', :layout => 'public'
-
    end
 
    def login 
@@ -12,7 +11,7 @@ class LoginController < ApplicationController
        session[:login] = {:user_name => @user.user_name}
        redirect_to :controller => 'home', :action => 'index'
      else
-       flash[:notice] = 'Incorrect email address or password.'
+       flash[:error] = 'Incorrect email address or password.'
        redirect_to :action => 'show'
      end      
 
