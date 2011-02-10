@@ -1,3 +1,6 @@
 class ContentItem < ActiveRecord::Base
-  has_and_belongs_to_many :tags
+  has_many :tags
+  has_many :tags_data, :through => :tags, :source => :tag_data
+
+  validates_presence_of :name, :content 
 end

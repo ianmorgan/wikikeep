@@ -1,0 +1,23 @@
+<h1>Listing tag_datas</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @tag_datas.each do |tag_data| %>
+  <tr>
+    <td><%= tag_data.name %></td>
+    <td><%= link_to 'Show', tag_data %></td>
+    <td><%= link_to 'Edit', edit_tag_data_path(tag_data) %></td>
+    <td><%= link_to 'Destroy', tag_data, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Tag data', new_tag_data_path %>
