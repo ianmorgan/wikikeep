@@ -4,7 +4,7 @@ Wikikeep::Application.routes.draw do
 
   root :controller => 'home', :action => 'index'
 
-  resources :tags
+  resources :tag_datas
 
   resources :content_items
 
