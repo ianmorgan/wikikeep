@@ -1,0 +1,7 @@
+<h3>Tags</h3>
+<% TagData.all.each do |tag| %>
+  <%=link_to tag.name, :controller => 'tag', :action => 'view', :id => tag.id %>
+<% end %>
+
+
+

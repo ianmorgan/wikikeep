@@ -12,6 +12,10 @@ Wikikeep::Application.routes.draw do
 
   match 'content/:action(/:id)', :controller => 'content'
 
+  match 'tag/:action(/:id)', :controller => 'tag'
+
+  match 'not_implemented', :controller => 'home', :action => 'not_implemented'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
