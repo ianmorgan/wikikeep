@@ -10,6 +10,8 @@ Wikikeep::Application.routes.draw do
 
   match 'login/:action(/:id)', :controller => 'login'
 
+  match 'content/:action(/:id)', :controller => 'content'
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

@@ -26,7 +26,7 @@ body {
 }
 #topheader{
   background-color:white;
-  background-image:url(/images/public/wikikeep.png);
+  background-image:url(/images/wikikeep.png);
   background-repeat:no-repeat;
   background-position:0px 8px;
   height:150px;  
@@ -155,7 +155,7 @@ h3 {
 #navigation {
   padding-top:5px;
   font-family:Tahoma,sans-serif;
-  font-size: 0.9em;
+  font-size: 1.0em;
 }
 #navigation ul {
   list-style: none;
@@ -165,18 +165,22 @@ h3 {
 }
 #navigation li {
   display: inline;
+  background-color: #2424DB;
+  margin: 3px;
+  padding: 3px;
+  -moz-border-radius:5px;
 }
 #navigation a:link, #navigation a:visited {
   padding-left: 8px;
   padding-right: 20px;
-  color: #666666;
-  background-color: white; 
+  color: #DDDDDD;
+  /*background-color: white;*/ 
   text-decoration: none;
-  border-left: 1px solid #666666;
+  /*border-left: 1px solid #666666;*/
 }
 #navigation a:hover {
  padding-left: 8px; 
- color: #101010;
+ color: #FFFFFF;
  /*border-left: 2px solid #101010;*/
 }
 

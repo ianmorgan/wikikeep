@@ -1,8 +1,8 @@
 require 'test_helper'
 
 class UsersControllerTest < ActionController::TestCase
-  fixtures :site_users  
-  set_fixture_class :site_users => User
+  #fixtures :site_users  
+  #set_fixture_class :site_users => User
    
 
   setup do
