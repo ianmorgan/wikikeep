@@ -1,0 +1,22 @@
+
+<p>Add a new page.</p> 
+
+<%= form_for @content, :url => { :action => "create" } do |f| %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name  %>
+  </div>
+  <div class="field">
+    <%= f.label :content %><br />
+    <%= f.text_area :content %>
+  </div>
+ <div class="field">
+    <%= f.label :tags  %><br />
+    <%= f.text_field  :tags %>
+  </div>
+ 
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
