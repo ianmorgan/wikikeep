@@ -6,12 +6,13 @@ class ContentService
    # Create a new content item in the data
    # plus any tags. 
    #
+   # Returns the id of the created record
+   #
    def add_content(content)
 
      content_item = ContentItem.new(:name => content[:name],
            :content => content[:content])
-     #tags.split(/[ |,]/)
-     tags =  content[:tags].split(/[ |,]/)
+     tags =  ParsingService.new.parse_tags(content[:tags])
   
      tags.each do |tag|  
         tag_data = TagData.find_by_name tag

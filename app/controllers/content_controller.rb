@@ -6,9 +6,13 @@ class ContentController < ApplicationController
   end
 
   def create 
-     service = ContentService.new
-     #p = ParsingService.new
-     result = service.add_content(params[:content_command])
-     redirect_to :controller => :content_items, :action => :show, :id => result 
+     @content = ContentCommand.new(params[:content_command])
+     if @content.valid?
+     	service = ContentService.new
+     	result = service.add_content(params[:content_command])
+     	redirect_to :controller => :content_items, :action => :show, :id => result
+     else
+	render :action => "add" 
+     end  
   end 
 end

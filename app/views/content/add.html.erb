@@ -1,6 +1,6 @@
 
 <p>Add a new page.</p> 
-
+<%= render "shared/error_messages", :target => @content %> 
 <%= form_for @content, :url => { :action => "create" } do |f| %>
 
   <div class="field">
