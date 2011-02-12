@@ -1,0 +1,11 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+test:
+  id:   1
+  name: test
+
+demo:
+  id:   2
+  name: demo
+
+
