@@ -1,7 +1,7 @@
 
 
 class TagController < ApplicationController
-  layout "public"
+  layout :determine_layout 
 
   def view
     @tag_data = TagData.find(params[:id])      
