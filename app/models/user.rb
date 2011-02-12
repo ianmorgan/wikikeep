@@ -1,5 +1,6 @@
 class User < ActiveRecord::Base
   set_table_name 'site_users'
+  belongs_to :account
 
 
   # Checks to see if there is a user who 

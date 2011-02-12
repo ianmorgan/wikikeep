@@ -8,3 +8,24 @@ Factory.define :content_item do |f|
  #  end item.tags << Tag.first } 
 
 end  
+
+Factory.sequence :email do |n| 
+   "jsmith#{n}@yahoo.com"
+end
+
+Factory.define :user do |f|
+   f.email Factory.next(:email)   
+   f.given_names 'John'
+   f.family_name 'Smith' 
+   f.password_hash 'password'
+end  
+
+Factory.sequence :account do |n|
+  "account#{n}"
+end
+
+Factory.define :account do |f|
+   f.name Factory.next(:account)
+end  
+
+
