@@ -1,5 +1,5 @@
 class ContentController < ApplicationController
-  layout "public"
+  layout :determine_layout
 
   def add 
      @content = ContentCommand.new

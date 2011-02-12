@@ -10,7 +10,15 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110205114640) do
+ActiveRecord::Schema.define(:version => 20110212101608) do
+
+  create_table "accounts", :force => true do |t|
+    t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "accounts", ["name"], :name => "idx_account_name", :unique => true
 
   create_table "content_items", :force => true do |t|
     t.string   "name"
@@ -19,15 +27,32 @@ ActiveRecord::Schema.define(:version => 20110205114640) do
     t.datetime "updated_at"
   end
 
-  create_table "content_items_tags", :id => false, :force => true do |t|
+  create_table "content_items_tags", :force => true do |t|
     t.integer  "content_item_id"
     t.integer  "tag_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
 
-  create_table "tags", :force => true do |t|
+  create_table "site_users", :force => true do |t|
+    t.string   "user_name"
+    t.string   "given_names"
+    t.string   "family_name"
+    t.string   "password_hash"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.integer  "account_id"
+  end
+
+  create_table "tag_datas", :force => true do |t|
     t.string   "name"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "tags", :force => true do |t|
+    t.integer  "tag_data_id"
+    t.integer  "content_item_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

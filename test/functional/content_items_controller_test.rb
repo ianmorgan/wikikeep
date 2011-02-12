@@ -6,7 +6,7 @@ class ContentItemsControllerTest < ActionController::TestCase
 
   setup do
     @content_item = content_items(:wikikeep)
-    @tag = site_users(:johnsmith)
+    @tag = site_users(:test)
   end
 
   test "should get index" do

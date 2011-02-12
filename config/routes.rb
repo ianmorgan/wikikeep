@@ -1,10 +1,10 @@
 Wikikeep::Application.routes.draw do
 
+  root :controller => 'home', :action => 'index'
+
   resources :accounts
 
   resources :users
-
-  root :controller => 'home', :action => 'index'
 
   resources :tag_datas
 

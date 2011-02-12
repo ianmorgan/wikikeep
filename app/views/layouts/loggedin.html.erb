@@ -17,7 +17,7 @@
        <div id="headermenu">
 	   <ul>
 		<li><%= link_to "Home", :controller => :home, :action => :index %></li>
-		<li><%= link_to "Login", :controller => :login, :action => :show %></li>
+		<li><%= link_to "Logout", :controller => :login, :action => :logout %></li>
 		
 	    </ul>
        </div>
@@ -25,6 +25,14 @@
      </div>
    </div>
   
+   <div id="navigation">
+    <ul>
+      <li><%= link_to "Add", :controller => :content, :action => :add %></li>
+      <li><%= link_to "Search", :controller => :content, :action => :search %></li>
+
+     </ul>
+   </div>
+   
    
    <table width="100%" style="margin-top:5px;" > 
     <tr>
@@ -35,6 +43,8 @@
      </td>
      <td width="260px" valign="top">
        <div id="infopanel">
+
+        <%= render :partial => '/shared/tags' %>
 
       </div>
    </td>

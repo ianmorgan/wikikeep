@@ -8,7 +8,7 @@ class UsersControllerTest < ActionController::TestCase
   setup do
     #set_fixture_class :site_users => User
     #fixtures :site_users
-    @user = site_users(:johnsmith)
+    @user = site_users(:test)
   end
 
   test "should get index" do

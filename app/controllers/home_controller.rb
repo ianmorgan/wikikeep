@@ -3,8 +3,7 @@
 #
 
 class HomeController < ApplicationController
-
-  layout 'public'
+  layout :determine_layout
 
   def index
      

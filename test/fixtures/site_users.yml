@@ -1,10 +1,19 @@
 # Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
 
-johnsmith:
+test:
   id:          1
-  user_name:   johnsmith
-  given_names: John 
-  family_name: Smith 
+  user_name:   test@example.com
+  given_names: Test 
+  family_name: User
+  account_id:  1 
+  password_hash: password
+
+demo:
+  id:          2
+  user_name:   demo@example.com
+  given_names: Demo 
+  family_name: User
+  account_id:  2 
   password_hash: password
 
 
