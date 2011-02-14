@@ -1,0 +1,12 @@
+<h1>Signup for a new account</h1>
+
+<p>This a free service that is currently being developed. At present it is only provided for demonstration purposes. Where possible data will be retained as the site is developed and upgrades applied.</p>
+
+<p><strong>Please don't upload any important or sensitive data</strong></p>
+
+<form action="<%= url_for(:action => 'step1') %>" method="post"> 
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"</input> 
+  <input type="submit" value="Continue"/>
+</form>
+
+
