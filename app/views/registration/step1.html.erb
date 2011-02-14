@@ -1,0 +1,16 @@
+<h1>Registration Step 1</h1>
+
+<p>Select an account name. This will be used to identify your content in the site 
+and form part of the URL</p>
+
+<p>todo - complete the form</p>
+
+<%= form_for(@step1, :url => {:action => 'step1_complete'} ) do |f| %>
+<div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div> 
+<%= f.submit :value => 'Continue' %>
+<% end %>
+
+
