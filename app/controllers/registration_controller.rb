@@ -6,8 +6,7 @@ class RegistrationController < ApplicationController
   end
 
   def step1 
-     @step1 = RegistrationStep1Command.new
-     @step1.name = 'test'
+     @registration_step1_command = RegistrationStep1Command.new
      if session[:registration_step] != 'start'
         redirect_to :action => 'start'
      else
@@ -15,12 +14,12 @@ class RegistrationController < ApplicationController
   end
 
   def step1_complete
-     @step1 = RegistrationStep1Command.new(params[:registration_step1_command][:name])
-     if @step1.valid? 
+     @registration_step1_command = RegistrationStep1Command.new(params[:registration_step1_command][:name])
+     if @registration_step1_command.valid? 
        session[:registration_step] != 'step2'
        redirect_to :action => 'step2'
      else 
-       render :action => 'step1'
+       render  :action => 'step1'
      end
   end
 

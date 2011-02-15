@@ -7,6 +7,10 @@ body, p, ol, ul, td {
 }
 */
 
+input {
+  padding:2px;
+}
+
 div.field, div.actions {
   margin-bottom: 10px;
 }
@@ -15,16 +19,15 @@ table.form {
   margin-left: -3px;
 }
 
-table.form td.label {
-  
+table.form td.label {  
   color: #020202;
 }
 
 
-.field_with_errors {
-  padding:1px;
-  background-color: red;
-  display: table;
+
+table.form td.field .field_with_errors input {
+  border: 1px solid red;
+  -moz-border-radius:3px;
 }
 
 #error_explanation {

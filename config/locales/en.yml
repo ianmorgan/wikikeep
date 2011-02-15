@@ -3,3 +3,9 @@
 
 en:
   hello: "Hello world"
+
+helpers:
+  label:
+    registration_step1_command:
+      name: "Your account name"
+

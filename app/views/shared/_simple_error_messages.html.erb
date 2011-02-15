@@ -1,5 +1,5 @@
    <% if target && target.errors.any? %>  
-   <div id="shortErrorExplanation">  
+   <div id="simple_error_explanation">  
       <ul>  
       <% target.errors.full_messages.each do |msg| %>  
         <li><%= msg %></li>  
