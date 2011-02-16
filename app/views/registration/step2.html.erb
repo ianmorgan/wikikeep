@@ -1,0 +1,17 @@
+<h1>Register: Step 2</h1>
+
+<p>Enter your logon details. Please note your user name should be your
+email address. You can add other users after registration.</p>
+
+<%= render "shared/simple_error_messages", :target => @registration_step2_command %>
+<%= form_for(@registration_step2_command, :url => {:action => 'step2_complete'} ) do |f| %>
+<table class="form">
+ <tr>
+   <td class="label"><%= f.label :user_name, 'Your username:' %></td>
+   <td class="field"><%= f.text_field :user_name %></td>
+ </tr>
+</table>
+<%= f.submit :value => 'Continue' %>
+<% end %>
+
+
