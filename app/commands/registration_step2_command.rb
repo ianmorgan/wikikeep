@@ -3,13 +3,13 @@ class RegistrationStep2Command < BasePoro
   attr_accessor :password
   attr_accessor :password_confirmation
 
-  validates_presence_of :user_name, :message => 'must be provided'
+  validates_presence_of :user_name, :password, :message => 'must be provided'
    
-  def initialize(user_name=nil,password=nil,password_confirmation=nil)
+  def initialize(attrs=Hash.new)
     super() 
-    @user_name = user_name
-    @password = password
-    @password_confirmation = password_confirmation
+    @user_name = attrs[:user_name]
+    @password = attrs[:password]
+    @password_confirmation = attrs[:password_confirmation]
   end
 
 

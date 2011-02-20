@@ -3,6 +3,7 @@ class RegistrationController < ApplicationController
 
   def start 
      session[:registration_step] = 'start'
+     session[:registration_data] = Hash.new
   end
 
   def step1 
@@ -17,6 +18,7 @@ class RegistrationController < ApplicationController
      @registration_step1_command = RegistrationStep1Command.new(params[:registration_step1_command][:account_name])
      if @registration_step1_command.valid? 
        session[:registration_step] = 'step2'
+       session[:registration_data][:step1] = @registration_step1_command 
        redirect_to :action => 'step2'
      else 
        render  :action => 'step1'
@@ -24,13 +26,34 @@ class RegistrationController < ApplicationController
   end
 
   def step2
-     puts session[:registration_step]
      if session[:registration_step] != 'step2'
         redirect_to current_step 
      else
         @registration_step2_command = RegistrationStep2Command.new('test')
      end
   end
+
+  def step2_complete
+     submitted = params[:registration_step2_command]
+     @registration_step2_command = RegistrationStep2Command.new(submitted)
+     if @registration_step2_command.valid? 
+       session[:registration_step] = 'step3'
+       session[:registration_data][:step2] = @registration_step2_command
+       redirect_to :action => 'step3'
+     else 
+       render  :action => 'step2'
+     end
+  end
+
+  def step3
+     if session[:registration_step] != 'step3'
+        redirect_to current_step 
+     else
+        @registration_step3_command = RegistrationStep2Command.new('test')
+     end
+  end
+
+
 
 private 
   def current_step

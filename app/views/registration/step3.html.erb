@@ -1,0 +1,16 @@
+<h1>Register: Step 3</h1>
+
+<p>Select you default options. These can be changed at any time.</p>
+
+<%= render "shared/simple_error_messages", :target => @registration_step3_command %>
+<%= form_for(@registration_step3_command, :url => {:action => 'step3_complete'} ) do |f| %>
+<table class="form"> 
+ <tr>
+   <td class="label"><%= f.label :user_name, 'Posts are visible to public users:' %></td>
+   <td class="field"><%= f.text_field :user_name %></td>
+ </tr>
+</table>
+<%= f.submit :value => 'Complete' %>
+<% end %>
+
+
