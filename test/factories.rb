@@ -29,3 +29,9 @@ Factory.define :account do |f|
 end  
 
 
+Factory.define :registration_step2_command do |f|
+   f.user_name Factory.next(:email)   
+   f.password 'password'
+   f.password_confirmation 'password'
+end  
+

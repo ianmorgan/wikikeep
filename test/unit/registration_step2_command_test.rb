@@ -2,13 +2,33 @@ require 'test_helper'
 
 class RegistrationStep2CommandTest < ActiveSupport::TestCase
   def setup 
-    @command = RegistrationStep2Command.new
+    @command = Factory.build(:registration_step2_command)
   end
 
-  test "validates user name is supplied" do 
+  test "validates user name is supplied" do
+     @command.user_name = nil 
      assert @command.valid? == false
      assert field_has_error(@command, :user_name)  
+  end
+
+  test "validates password is supplied" do
+     @command.password = nil 
+     assert @command.valid? == false
+     assert field_has_error(@command, :password)  
+  end
+
+  test "validates passwords mathc" do
+     @command.password = "p1"
+     @command.password_confirmation = "p2" 
+     assert @command.valid? == false
+     assert field_has_error(@command, :password)  
+  end
+
+  test "valid command passes validation" do
+     @command = Factory.build(:registration_step2_command)  
+     assert @command.valid?   
   end 
+   
 
 
   # todo - some reusable test case to be refactored 

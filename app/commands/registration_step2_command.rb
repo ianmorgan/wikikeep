@@ -4,7 +4,7 @@ class RegistrationStep2Command < BasePoro
   attr_accessor :password_confirmation
 
   validates_presence_of :user_name, :password, :message => 'must be provided'
-  validates_confirmation_of :password,  :message => "should match confirmation"
+  validates_confirmation_of :password,  :if => Proc.new { |cmd| !cmd.password.blank? } 
 
    
   def initialize(attrs=Hash.new)
