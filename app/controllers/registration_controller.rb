@@ -28,7 +28,7 @@ class RegistrationController < ApplicationController
      if session[:registration_step] != 'step2'
         redirect_to current_step 
      else
-        @registration_step2_command = RegistrationStep2Command.new('test')
+        @registration_step2_command = RegistrationStep2Command.new()
      end
   end
 
@@ -45,12 +45,30 @@ class RegistrationController < ApplicationController
   end
 
   def step3
+     #submitted = params[:registration_step3_command]
      if session[:registration_step] != 'step3'
         redirect_to current_step 
      else
-        @registration_step3_command = RegistrationStep2Command.new('test')
+        @registration_step3_command = RegistrationStep3Command.new()
      end
   end
+
+  def step3_complete
+     submitted = params[:registration_step3_command]
+     @registration_step3_command = RegistrationStep3Command.new(submitted)
+     if @registration_step3_command.valid? 
+       session[:registration_step] = 'step3'
+       session[:registration_data][:step2] = @registration_step2_command
+       redirect_to :action => 'complete'
+     else 
+       render  :action => 'step2'
+     end
+  end
+
+  def complete 
+
+  end
+
 
 
 

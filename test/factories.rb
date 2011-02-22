@@ -29,6 +29,12 @@ Factory.define :account do |f|
 end  
 
 
+Factory.define :registration_step1_command do |f|
+#   f.account_name Factory.next(:account)
+f.account_name 'testaccount11'
+end  
+
+
 Factory.define :registration_step2_command do |f|
    f.user_name Factory.next(:email)
    f.given_names 'John'

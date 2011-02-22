@@ -6,8 +6,9 @@
 <%= form_for(@registration_step3_command, :url => {:action => 'step3_complete'} ) do |f| %>
 <table class="form"> 
  <tr>
-   <td class="label"><%= f.label :user_name, 'Posts are visible to public users:' %></td>
-   <td class="field"><%= f.text_field :user_name %></td>
+   <td class="label"><%= f.label :default_visibility, 'Who can see posts?' %></td>
+   <td class="field">Anyone: <%= f.radio_button :default_visibility, :public %></td>
+   <td class="field">My team:<%= f.radio_button :default_visibility, :private %></td>
  </tr>
 </table>
 <%= f.submit :value => 'Complete' %>
