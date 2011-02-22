@@ -17,9 +17,9 @@ class RegistrationStep2CommandTest < ActiveSupport::TestCase
      assert field_has_error(@command, :password)  
   end
 
-  test "validates passwords mathc" do
-     @command.password = "p1"
-     @command.password_confirmation = "p2" 
+  test "validates passwords match" do
+     @command.password = "password1"
+     @command.password_confirmation = "password2" 
      assert @command.valid? == false
      assert field_has_error(@command, :password)  
   end

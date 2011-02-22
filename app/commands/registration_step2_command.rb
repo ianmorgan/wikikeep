@@ -6,6 +6,9 @@ class RegistrationStep2Command < BasePoro
   attr_accessor :password_confirmation
 
   validates_presence_of :user_name, :password, :family_name, :message => 'must be provided'
+  validates_length_of  :user_name, :within => 6..20, :allow_blank => true
+  validates_length_of  :given_names, :family_name, :maximum  => 32
+  validates_length_of  :password, :password_confirmation, :within => 6..16, :allow_blank => true
   validates_confirmation_of :password,  :if => Proc.new { |cmd| !cmd.password.blank? } 
 
    
