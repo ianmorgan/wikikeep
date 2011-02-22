@@ -30,7 +30,9 @@ end
 
 
 Factory.define :registration_step2_command do |f|
-   f.user_name Factory.next(:email)   
+   f.user_name Factory.next(:email)
+   f.given_names 'John'
+   f.family_name 'Smith'   
    f.password 'password'
    f.password_confirmation 'password'
 end  
