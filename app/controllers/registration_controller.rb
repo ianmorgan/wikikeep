@@ -68,8 +68,7 @@ class RegistrationController < ApplicationController
      attrs = session[:registration_data][:step1].attributes
      attrs = attrs.merge(session[:registration_data][:step2].attributes)
      attrs = attrs.symbolize_keys
-     result = RegistrationService.new.create_account attrs
-     puts result
+     result = RegistrationService.new.create_account attrs 
   end
 
 

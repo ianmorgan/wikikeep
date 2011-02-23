@@ -18,7 +18,14 @@ Wikikeep::Application.routes.draw do
 
   match 'registration/:action(/:id)', :controller => 'registration'
 
-  match 'not_implemented', :controller => 'home', :action => 'not_implemented'
+
+  #named routes for common links
+  match 'login' => 'login#show', :as => :login
+  match 'logout' => 'login#logout', :as => :logout 
+  match 'register' => 'registration#start', :as => :register
+  match 'not_implemented', :controller => 'home', :action => 'not_implemented', :as => 'not_implemented'
+  match 'about', :controller => 'home', :action => 'about', :as => 'about'
+
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

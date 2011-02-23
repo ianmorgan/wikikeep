@@ -2,7 +2,7 @@ class LoginController < ApplicationController
    layout :determine_layout
    
    def show
-   	render :view => 'show', :layout => 'public'
+     render :view => 'show', :layout => 'public'
    end
 
    def login 
@@ -21,6 +21,5 @@ class LoginController < ApplicationController
    def logout
        session[:user] = nil 
        session[:account] = nil 
-       #redirect_to :contraction => 'show'
    end
 end

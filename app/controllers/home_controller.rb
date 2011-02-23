@@ -6,14 +6,14 @@ class HomeController < ApplicationController
   layout :determine_layout
 
   def index
-     
   end
 
   def about 
-     
   end
 
-  def not_implemented 
-     
+  def why  
+  end
+
+  def not_implemented     
   end
 end
