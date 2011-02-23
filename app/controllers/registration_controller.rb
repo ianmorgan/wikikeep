@@ -15,7 +15,7 @@ class RegistrationController < ApplicationController
   end
 
   def step1_complete
-     @registration_step1_command = RegistrationStep1Command.new(params[:registration_step1_command][:account_name])
+     @registration_step1_command = RegistrationStep1Command.new(params[:registration_step1_command])
      if @registration_step1_command.valid? 
        session[:registration_data][:step1] = @registration_step1_command 
        move_to_step 'step2'
@@ -45,7 +45,6 @@ class RegistrationController < ApplicationController
   end
 
   def step3
-     #submitted = params[:registration_step3_command]
      if session[:registration_step] != 'step3'
         redirect_to current_step 
      else
@@ -58,7 +57,7 @@ class RegistrationController < ApplicationController
      @registration_step3_command = RegistrationStep3Command.new(submitted)
      if @registration_step3_command.valid? 
        session[:registration_step] = 'step3'
-       session[:registration_data][:step2] = @registration_step2_command
+       session[:registration_data][:step3] = @registration_step3_command
        redirect_to :action => 'complete'
      else 
        render  :action => 'step2'
@@ -66,7 +65,11 @@ class RegistrationController < ApplicationController
   end
 
   def complete 
-
+     attrs = session[:registration_data][:step1].attributes
+     attrs = attrs.merge(session[:registration_data][:step2].attributes)
+     attrs = attrs.symbolize_keys
+     result = RegistrationService.new.create_account attrs
+     puts result
   end
 
 

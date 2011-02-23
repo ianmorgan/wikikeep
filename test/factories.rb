@@ -30,8 +30,7 @@ end
 
 
 Factory.define :registration_step1_command do |f|
-#   f.account_name Factory.next(:account)
-f.account_name 'testaccount11'
+   f.account_name Factory.next(:account)
 end  
 
 

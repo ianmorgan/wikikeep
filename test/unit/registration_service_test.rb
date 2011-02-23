@@ -6,7 +6,7 @@ class RegistrationServiceTest < ActiveSupport::TestCase
      service = RegistrationService.new
 
      attrs = Factory.build(:registration_step1_command).attributes
-     attrs.merge(Factory.build(:registration_step2_command).attributes)
+     attrs = attrs.merge(Factory.build(:registration_step2_command).attributes)
      attrs = attrs.symbolize_keys
 
      result = service.create_account(attrs)
@@ -14,7 +14,12 @@ class RegistrationServiceTest < ActiveSupport::TestCase
 
      account = Account.find_by_name attrs[:account_name]
      assert account
-     assert_equal 1, account.users.size  
+     assert_equal 1, account.users.size
+
+     user = account.users.first
+     assert_equal attrs[:user_name], user.user_name
+     assert_equal attrs[:family_name], user.family_name  
+  
 
   end
 end

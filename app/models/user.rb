@@ -2,6 +2,8 @@ class User < ActiveRecord::Base
   set_table_name 'site_users'
   belongs_to :account
 
+  validates_presence_of :user_name, :family_name, :password_hash
+
 
   # Checks to see if there is a user who 
   # matches these credentials. Returns 
