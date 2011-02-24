@@ -23,7 +23,7 @@ class ContentController < ApplicationController
      @content = ContentCommand.new(params[:content_command])
      if @content.valid?
      	service = ContentService.new
-     	result = service.add_content(params[:content_command])
+     	result = service.add_content(account_id,params[:content_command])
      	redirect_to  :action => :view, :id => result
      else
 	render :action => "add" 

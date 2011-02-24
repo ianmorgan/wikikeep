@@ -8,16 +8,17 @@ class ContentService
    #
    # Returns the id of the created record
    #
-   def add_content(content)
+   def add_content(account_id, content)
 
      content_item = ContentItem.new(:name => content[:name],
            :content => content[:content])
+     content_item.account_id = account_id
      tags =  ParsingService.new.parse_tags(content[:tags])
   
      tags.each do |tag|  
         tag_data = TagData.find_by_name tag
         unless tag_data 
-          tag_data = TagData.new(:name => tag)
+          tag_data = TagData.new(:name => tag, :account_id => account_id)
           tag_data.save!
         end 
         content_item.tags_data << tag_data

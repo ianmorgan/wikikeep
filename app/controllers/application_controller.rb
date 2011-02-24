@@ -17,17 +17,22 @@ private
   def check_account
     unless is_logged_in?
       flash[:error] = "You must be logged in"
-      redirect_to login_url # halts request cycle
+      redirect_to login_url 
     end
     if params[:account_name] != session[:current_user][:account_name]
       flash[:error] = "You are not authorised"
-      redirect_to login_url # halts request cycle
+      redirect_to login_url 
     end
   end
 
   def account_name 
     session[:current_user][:account_name]
   end
+
+  def account_id 
+    session[:current_user][:account_id]
+  end
+
 
    
   helper_method :ie6?  

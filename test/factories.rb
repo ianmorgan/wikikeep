@@ -5,7 +5,10 @@ Factory.define :content_item do |f|
  #     f.tags.each 
  #     item.tags << Tag.first #
 #
- #  end item.tags << Tag.first } 
+ #  end item.tags << Tag.first }
+   
+   # by default all content is associated with the "test" account
+   f.account_id  1
 
 end  
 
