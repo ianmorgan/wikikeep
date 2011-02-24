@@ -12,9 +12,9 @@ Wikikeep::Application.routes.draw do
 
   match 'login/:action(/:id)', :controller => 'login'
 
-  match 'content/:action(/:id)', :controller => 'content'
+  match ':account_name/content/:action(/:id)', :controller => 'content'
 
-  match 'tag/:action(/:id)', :controller => 'tag'
+  match ':account_name/tag/:action(/:id)', :controller => 'tag'
 
   match 'registration/:action(/:id)', :controller => 'registration'
 

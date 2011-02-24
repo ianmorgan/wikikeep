@@ -1,5 +1,6 @@
 class ContentController < ApplicationController
   layout :determine_layout
+  before_filter :check_account
 
   def add 
      @content = ContentCommand.new
@@ -13,6 +14,10 @@ class ContentController < ApplicationController
      @content_item = ContentItem.find(params[:id]) 
   end
 
+  def home
+     @content_items = ContentItem.find(:all) 
+  end
+
 
   def create 
      @content = ContentCommand.new(params[:content_command])
@@ -23,5 +28,6 @@ class ContentController < ApplicationController
      else
 	render :action => "add" 
      end  
-  end 
+  end
+ 
 end

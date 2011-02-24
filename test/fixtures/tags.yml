@@ -12,7 +12,8 @@ two:
  tag_data_id: 2
  content_item_id: 2
 
-three:
- tag_data_id: 3
+# Setup demo data 
+demo_tag1:
+ tag_data_id: 4
  content_item_id: 2
 

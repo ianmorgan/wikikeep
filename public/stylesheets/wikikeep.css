@@ -7,6 +7,12 @@ body, p, ol, ul, td {
 }
 */
 
+ul li {
+  list-style: square;
+  margin-left: -10px;
+  padding-bottom:2px;
+}
+
 input {
   padding:2px;
 }

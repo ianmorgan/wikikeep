@@ -1,14 +1,20 @@
 <h1>Home page</h1>
 
-<p>Welcome to Wikikeep. This webs site is still
-under development but feel free to look around</p>
+<p>Welcome to Wikikeep. This web site is still
+under development, but feel free to look around.</p>
 
-<p><%= link_to("Register", register_path)%> for a free account</p>
+<p>You can:</p>
+<ul>
+  <li><%= link_to("Login", login_path)%> with the username of 'demo@example.com' and password of 'password' to play around.</li> 
 
-<p>Find out <%= link_to("more", about_path)%></p>
+  <li><%= link_to("Register", register_path)%> for a free account.</li>
 
-<p>
-<a href="emailto:southbeachdownunder@gmail.com">please email</a> if you have any questions or comments</p>
+  <li>Find out <%= link_to("more", about_path)%>.</li>
+
+  <li>
+    <a href="emailto:southbeachdownunder@gmail.com">Email</a> if you have any questions or comments.
+  </li>
+</ul>
 
 
 

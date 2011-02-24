@@ -1,5 +1,5 @@
 <h3>Tags</h3>
-<% TagData.all.each do |tag| %>
+<% Account.find_by_name(params[:account_name]).tag_datas.each do |tag| %>
   <%=link_to tag.name, :controller => 'tag', :action => 'view', :id => tag.id %>
 <% end %>
 

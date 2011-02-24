@@ -9,9 +9,14 @@ class LoginController < ApplicationController
      @user = User.authenticate(params[:user_name], params[:password]) 
      
      if @user 
-       session[:user] = @user.attributes
-       session[:account] = @user.account.attributes
-       redirect_to :controller => 'home', :action => 'index'
+       current_user = Hash.new
+       current_user[:user_attibutes] = @user.attributes
+       current_user[:account_attibutes] = @user.account.attributes
+       current_user[:account_name] = @user.account.name
+       current_user[:account_id] = @user.account.id
+
+       session[:current_user] = current_user
+       redirect_to :controller => 'content', :action => 'home', :account_name => @user.account.name
      else
        flash[:error] = 'Incorrect email address or password.'
        redirect_to :action => 'show'
@@ -19,7 +24,6 @@ class LoginController < ApplicationController
    end
 
    def logout
-       session[:user] = nil 
-       session[:account] = nil 
+       session[:current_user] = nil  
    end
 end
