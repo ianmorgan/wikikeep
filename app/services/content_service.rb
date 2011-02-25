@@ -25,6 +25,10 @@ class ContentService
      end
  
      content_item.save
+
+     search_service = SearchService.new
+     search_service.add_content_item content_item 
+     
      return content_item.id
    end
 
