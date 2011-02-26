@@ -17,11 +17,35 @@ class SearchService
       :name => item.name, 
       :manu_exact => item.account.name,
       :keywords => item.tags.each.collect{ |t| t.tag_data.name }.join(','),
+      :subject => item.content[0..99],
       :text => item.content}]
     response = solr.add documents
-    puts response
     response = solr.commit
-    puts response
+    #todo - add error handling !
+  end
+
+  #
+  # Performs a search using the query term provided
+  # For security searching is always scoped to the
+  # current account. 
+  #  
+  def search(account, q) 
+
+  # send a request to /select
+  response = solr.get 'select', :params => {:wt => :ruby ,:q => 'manu_exact:"' + account +'" AND (' + q + ')'}
+
+  puts response['response']['numFound']
+  docs = response['response']['docs']
+  results = [] 
+  docs.each do |doc|
+     item = Hash.new
+     item['id'] = doc['id']
+     item['name'] = doc['name']
+     item['tags'] = doc['keywords'].split(',')
+     item['summary'] = doc['subject']
+     results << item
+  end
+  return results
   end
 
 private 

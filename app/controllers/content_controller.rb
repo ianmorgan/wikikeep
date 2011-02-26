@@ -6,9 +6,17 @@ class ContentController < ApplicationController
      @content = ContentCommand.new
   end
 
-  def search 
-     redirect_to :controller => 'home', :action => 'not_implemented' 
+  def search
+    #renders default search form 
   end
+
+  def dosearch
+     # todo - check that search term has been provided
+     search_service = SearchService.new
+     @results = search_service.search(account_name,params[:q]) 
+     render :template => 'content/search_results' 
+  end
+
 
   def view
      @content_item = ContentItem.find(params[:id]) 

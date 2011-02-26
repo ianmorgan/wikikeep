@@ -1,0 +1,10 @@
+
+<p>Search results </p>
+
+<% @results.each do |result| %>
+  <h2><%= result['name'] %> </h2>
+  <%= result['summary'] %> </br>
+  <%= result['tags'] %> </br>
+<% end %>
+
+
