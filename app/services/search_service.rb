@@ -13,11 +13,11 @@ class SearchService
   #
   def add_content_item(item)
      documents = [
-     {:id=>10000000 + item.id, 
-      :name=>item.name, 
+     {:id => 10000000 + item.id, 
+      :name => item.name, 
       :manu_exact => item.account.name,
-      :keywords => item.tags.each.collect {|t| t.tag_data.name }.join (','),
-      :text =>item.content}]
+      :keywords => item.tags.each.collect{ |t| t.tag_data.name }.join(','),
+      :text => item.content}]
     response = solr.add documents
     puts response
     response = solr.commit
