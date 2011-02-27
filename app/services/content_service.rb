@@ -1,4 +1,4 @@
-#require "#{Rails.root}/app/services/parsing_service.rb"
+
 
 class ContentService 
 

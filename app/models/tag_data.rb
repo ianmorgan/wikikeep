@@ -8,9 +8,9 @@ class TagData < ActiveRecord::Base
  scope :for_account_id, lambda { |account_id| where("account_id = ?", account_id) }
  scope :named, lambda { |name| where("lower(name) = ?", name.downcase) }
 
- def self.find_by_name(name)
-    # ensures case insensitive match 
-    TagData.find(:first, :conditions => [ "lower(name) = ?", name.downcase ])
- end
+ #def self.find_by_name(name)
+ #   # ensures case insensitive match 
+ #   TagData.find(:first, :conditions => [ "lower(name) = ?", name.downcase ])
+ #end
 
 end
