@@ -4,4 +4,7 @@ class ContentItem < ActiveRecord::Base
   belongs_to :account
 
   validates_presence_of :name, :content, :account
+
+  scope :for_account_id, lambda { |account_id| where("account_id = ?", account_id) }  
+
 end
