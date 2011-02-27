@@ -16,7 +16,7 @@ class ContentService
      tags =  ParsingService.new.parse_tags(content[:tags])
   
      tags.each do |tag|  
-        tag_data = TagData.find_by_name tag
+        tag_data = TagData.named(tag).for_account_id(account_id).first
         unless tag_data 
           tag_data = TagData.new(:name => tag, :account_id => account_id)
           tag_data.save!

@@ -19,11 +19,11 @@ class ContentController < ApplicationController
 
 
   def view
-     @content_item = ContentItem.find(params[:id]) 
+     @content_item = ContentItem.for_account_id(account_id).find(params[:id]) 
   end
 
   def home
-     @content_items = ContentItem.find(:all) 
+     @content_items = ContentItem.for_account_id(account_id).find(:all) 
   end
 
 

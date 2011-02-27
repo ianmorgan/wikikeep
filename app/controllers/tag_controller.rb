@@ -5,6 +5,6 @@ class TagController < ApplicationController
   before_filter :check_account
 
   def view
-    @tag_data = TagData.find(params[:id])      
+    @tag_data = TagData.for_account_id(account_id).find(params[:id])      
   end
 end
