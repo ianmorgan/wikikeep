@@ -13,7 +13,7 @@ class SearchService
   #
   def add_content_item(item)
      documents = [
-     {:id => 10000000 + item.id, 
+     {:id => item.id, 
       :name => item.name, 
       :manu_exact => item.account.name,
       :keywords => item.tags.each.collect{ |t| t.tag_data.name }.join(','),
@@ -34,7 +34,6 @@ class SearchService
   # send a request to /select
   response = solr.get 'select', :params => {:wt => :ruby ,:q => 'manu_exact:"' + account +'" AND (' + q + ')'}
 
-  puts response['response']['numFound']
   docs = response['response']['docs']
   results = [] 
   docs.each do |doc|

@@ -1,10 +1,9 @@
 
-<p>Search results </p>
+<p>Search results</p>
 
 <% @results.each do |result| %>
-  <h2><%= result['name'] %> </h2>
-  <%= result['summary'] %> </br>
-  <%= result['tags'] %> </br>
+  <%= render "shared/content_item_listing", :result => result %>
+  
 <% end %>
 
 

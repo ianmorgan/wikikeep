@@ -1,16 +1,13 @@
-<h2><%= @tag_data.name %></h2>
+<h2><%= @tag_name %></h2>
 
 <p>The following pages are linked by this tag</P>
 
-<table>
-<% @tag_data.content_items.each do |content| %>
 
-  <tr>
-    <td><%= content.name %> <%= link_to 'Show', :controller => 'content', :action => 'view', :id => content.id %></td>
-   
-  </tr>
+<% @results.each do |result| %>
+  <%= render "shared/content_item_listing", :result => result %>
+  
 <% end %>
-</table>
+
 
 
 
