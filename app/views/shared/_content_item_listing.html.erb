@@ -1,4 +1,4 @@
-  <h2><%= link_to result['name'],  :action => 'view', :id => result['id']%> </h2>
+  <h2><%= link_to result['name'],  :controller => 'content', :action => 'view', :id => result['id']%> </h2>
   <%= result['summary'] %> </br>
   Tags: 
   <% result['tags'].each do |tag|  %> 
