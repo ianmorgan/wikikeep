@@ -1,0 +1,10 @@
+<h1>Add a new page</h1>
+
+<p>Lorem ipsum...<p>
+
+<form action="<%= url_for(:action => 'step1') %>" method="post"> 
+  <input type="hidden" name="authenticity_token" value="<%=form_authenticity_token%>"</input> 
+  <input type="submit" value="Continue"/>
+</form>
+
+

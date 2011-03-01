@@ -19,6 +19,9 @@ Wikikeep::Application.routes.draw do
 
 
   match 'registration/:action(/:id)', :controller => 'registration'
+  
+  match 'add_content/:action(/:id)', :controller => 'add_content'
+
 
 
   #named routes for common links

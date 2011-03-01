@@ -1,9 +1,13 @@
+# Main content controller 
+# 
+#
 class ContentController < ApplicationController
   layout :determine_layout
   before_filter :check_account
 
   def add 
-     @content = ContentCommand.new
+     #@content = ContentCommand.new
+     redirect_to :controller => 'add_content', :action => 'start'
   end
 
   def search

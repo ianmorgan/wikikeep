@@ -1,0 +1,16 @@
+<h1>Add Content: Step 1</h1>
+<p>Enter your page title </p>
+
+
+
+<%= render "shared/simple_error_messages", :target => @add_content_step1_command %>
+<%= form_for(@add_content_step1_command, :url => {:action => 'step1_complete'} ) do |f| %>
+<table class="form">
+ <tr>
+   <td class="label"><%= f.label :title, 'Page title:' %></td>
+   <td class="field"><%= f.text_field :title %></td>
+ </tr>
+</table>
+<%= f.submit :value => 'Continue' %>
+<% end %>
+
