@@ -1,6 +1,5 @@
 class AddContentStep1Command < BaseCommand 
-  column :title, :string 
+  column :name, :string 
 
-  validates_presence_of :title, :message => 'must be provided'
-
+  validates_presence_of :name, :message => 'must be provided'
 end

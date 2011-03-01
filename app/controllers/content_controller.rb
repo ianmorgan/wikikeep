@@ -31,15 +31,15 @@ class ContentController < ApplicationController
   end
 
 
-  def create 
-     @content = ContentCommand.new(params[:content_command])
-     if @content.valid?
-     	service = ContentService.new
-     	result = service.add_content(account_id,params[:content_command])
-     	redirect_to  :action => :view, :id => result
-     else
-	render :action => "add" 
-     end  
-  end
+#  def create 
+#     @content = ContentCommand.new(params[:content_command])
+#     if @content.valid?
+#     	service = ContentService.new
+#     	result = service.add_content(account_id,params[:content_command])
+#     	redirect_to  :action => :view, :id => result
+#     else
+#	render :action => "add" 
+#     end  
+#  end
  
 end

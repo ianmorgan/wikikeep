@@ -1,0 +1,15 @@
+<h1>Add Content: Step 3</h1>
+<p>Enter your page tags </p>
+
+
+<%= render "shared/simple_error_messages", :target => @add_content_step3_command %>
+<%= form_for(@add_content_step3_command, :url => {:action => 'step3_complete'} ) do |f| %>
+<table class="form">
+ <tr>
+   <td class="label"><%= f.label :tags, 'Tags:' %></td>
+   <td class="field"><%= f.text_field :tags %></td>
+ </tr>
+</table>
+<%= f.submit :value => 'Continue' %>
+<% end %>
+
