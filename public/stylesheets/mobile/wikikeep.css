@@ -1,0 +1,80 @@
+/*body { background-color: #fff; color: #333; }
+
+body, p, ol, ul, td {
+  font-family: verdana, arial, helvetica, sans-serif;
+  font-size:   13px;
+  line-height: 18px;
+}
+*/
+
+ul li {
+  list-style: square;
+  margin-left: -10px;
+  padding-bottom:2px;
+}
+
+input {
+  padding:2px;
+}
+
+div.field, div.actions {
+  margin-bottom: 10px;
+}
+
+table.form {
+  margin-left: -3px;
+}
+
+table.form td.label {  
+  color: #020202;
+}
+
+
+
+table.form td.field .field_with_errors input {
+  border: 1px solid red;
+  -moz-border-radius:3px;
+}
+
+#error_explanation {
+  width: 450px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 0;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  margin-bottom: 0px;
+  background-color: #c00;
+  color: #fff;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+}
+
+#simple_error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
+  color: red;
+}
+
+.content_item  {
+  background: #EEEEEE;
+  padding:5px;
+  border: 1px solid blue;
+}
+
+.content_item pre {
+ font: Tahoma, sans-serif;
+ font-size: 1.2em; 
+
+}

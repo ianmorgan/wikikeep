@@ -1,0 +1,232 @@
+/* CSS Document */
+
+
+/*PAGE LAYOUT*/
+body {
+  background-color: #666666;
+  color: #666666;
+}
+/*body {  
+#    background-color: #666;  
+# }*/  
+      
+#page {  
+      width: 90%;  
+      min-width: none;  
+      margin: 0 auto;  
+        background-color: white;  
+     padding: 0;  
+     border: none;  
+     margin-top: 20px;  
+}  
+
+#headercontent{
+   font: 0.8em Tahoma, sans-serif;
+   background-color: #2424DB;
+   color: #666666;
+   padding: 10px;
+   text-align: left;
+   margin-top: 5px;
+   margin-left:50px;
+   height:100px;
+}
+#topheader{
+  background-color:white;
+  background-image:url(/images/wikikeep.png);
+  background-repeat:no-repeat;
+  background-position:0px 8px;
+  height:150px;  
+}
+
+#infopanel{
+   margin-top:20px;
+}
+
+/* quick links at top right */
+#headermenu ul li {
+    border-left: 1px solid #FFFFFF;
+    color: #FFFFFF;
+    float: right;
+    list-style: none outside none;
+    margin-top: 68px;
+    padding-left: 10px;
+    padding-right: 20px;
+}
+#headermenu ul li a:hover{
+    text-decoration:none;
+    color: #101010;
+    background:inherit;   
+}
+#headermenu ul li a{
+    text-decoration:none;
+    color: white;   
+}
+
+
+
+/* user defined page content within this area */ 
+#pagecontent {
+   font: Tahoma, sans-serif;
+   font-size: 0.8em;
+   background-color: white;
+   color: #666666;
+   padding: 10px;
+   text-align: left;
+   margin-top: 5px;
+   width:70%;
+   display:block;   
+ }
+
+#pagecontent a {
+   color: #444444;
+}
+
+#pagecontent a:hover {
+   color: #101010;
+}
+
+
+/*TEXT STYLES  -- are these used ? */
+.bodytext {
+	font: 0.7em Tahoma, sans-serif;
+	color: #666666;
+}
+
+#topheader .bodytext {
+	margin-left: 10px;
+}
+
+
+h1 {
+  color:#2424DB;
+  font-family:Tahoma,sans-serif;
+  font-size:28px;
+  font-weight:normal;
+}
+
+h2 {
+  color:#2424DB;
+  font-family:Tahoma,sans-serif;
+  font-size:24px;
+  font-weight:normal;
+}
+
+h3 {
+  color:#2424DB;
+  font-family:Tahoma,sans-serif;
+  font-size:22px;
+  font-weight:normal;
+}
+
+/* Floating panels to right */
+.graypanel{
+  background-color:rgb(224,213,197);
+  font: 0.8em Tahoma, sans-serif;
+  color: #666666;
+  padding:10px; 
+  margin-bottom:10px;
+  float: top;
+}
+
+.graypanel p {
+   font: Tahoma, sans-serif;
+   color: #666666;
+}
+.graypanel .title {
+	font-size:20px;
+	font-weight:normal;
+	color:rgb(229,25,55);
+}
+.graypanel .smalltitle {
+	font-size:14px;
+	font-weight:normal;
+	color:rgb(229,25,55);
+}
+.graypanel  a{
+	font: Tahoma, sans-serif;
+	text-decoration:underline;
+        color: #444444;
+}
+.graypanel  a:visited{
+  font: Tahoma, sans-serif;
+  text-decoration:underline;
+  color: #444444;
+}
+.graypanel  a:hover{
+  color: #101010;
+  /*background-color:rgb(224,213,197); */
+}
+
+/* Main Navigation Menu */
+#navigation {
+  padding-top:5px;
+  font-family:Tahoma,sans-serif;
+  font-size: 1.0em;
+}
+#navigation ul {
+  list-style: none;
+  margin: 0; 
+  padding: 0;
+  padding-top: 1em;
+}
+#navigation li {
+  display: inline;
+  background-color: #2424DB;
+  margin: 3px;
+  padding: 3px;
+  -moz-border-radius:5px;
+}
+#navigation a:link, #navigation a:visited {
+  padding-left: 8px;
+  padding-right: 20px;
+  color: #DDDDDD;
+  /*background-color: white;*/ 
+  text-decoration: none;
+  /*border-left: 1px solid #666666;*/
+}
+#navigation a:hover {
+ padding-left: 8px; 
+ color: #FFFFFF;
+ /*border-left: 2px solid #101010;*/
+}
+
+/* for new page */
+#news h2 {
+  font-size:18px;
+}
+#news div.newstext {
+  margin-top: -10px;
+  margin-bottom: 5px;
+}
+
+#news div.allnewletters {
+  float:right;
+  width:150px;
+  padding:0px 10px 20px 10px;
+  margin-right:40px;
+  margin-top:30px;
+  background-color: rgb(229,25,55);
+  color:white; 
+}
+
+#news div.allnewletters h2{
+  color:white; 
+  font-size:20px;
+}
+
+#news div.allnewletters a{
+  color:white;
+  text-decoration:none; 
+}
+
+#news div.allnewletters a:hover{
+  color:#101010;
+  text-decoration:none;
+  background-color: rgb(229,25,55);
+}
+
+.errormessage {
+  color:red;
+  font-size:1.2em;
+  
+}
