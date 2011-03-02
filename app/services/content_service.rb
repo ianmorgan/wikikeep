@@ -32,4 +32,15 @@ class ContentService
      return content_item.id
    end
 
+   def update_content(content_item_id, content)   
+     content_item = ContentItem.find(content_item_id)
+     content_item.content = content
+     content_item.save
+
+     #todo - must update lucene index
+     search_service = SearchService.new
+     search_service.add_content_item content_item
+   end
+
+
 end

@@ -24,6 +24,20 @@ class SearchService
     #todo - add error handling !
   end
 
+  # Updates the text index for an existing content item
+  #
+  def update_text(id, content)
+     documents = [
+     {:id => id, 
+      :text => content}]
+  puts ">>update text<<"
+  puts documents[0]
+    response = solr.add documents
+    response = solr.commit
+    #todo - add error handling !
+  end
+
+
   #
   # Performs a search using the query term provided
   # For security searching is always scoped to the

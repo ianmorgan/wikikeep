@@ -21,10 +21,29 @@ class ContentController < ApplicationController
   end
 
 
+  def edit
+     @content_item = ContentItem.for_account_id(account_id).find(params[:id])
+     @content_item.content.html_safe 
+
+     @update_content_command = UpdateContentCommand.new(:id => @content_item.id, :content => @content_item.content)
+  end
+
+  def update 
+     submitted = params[:update_content_command]
+     @update_content_command = UpdateContentCommand.new(submitted)
+     if @update_content_command.valid? 
+        service = ContentService.new
+        result = service.update_content(params[:id],@update_content_command.content)
+       redirect_to  :account_name => account_name, :controller => 'content', :action => 'view', :id => params[:id]
+
+     end
+  end
+  
   def view
      @content_item = ContentItem.for_account_id(account_id).find(params[:id])
      @content_item.content.html_safe 
   end
+
 
   def home
      @content_items = ContentItem.for_account_id(account_id).find(:all) 
