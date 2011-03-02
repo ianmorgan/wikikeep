@@ -42,6 +42,7 @@ class SearchService
      item['name'] = doc['name']
      item['tags'] = doc['keywords'].split(',')
      item['summary'] = doc['subject']
+     item['summary'].html_safe if item['summary'] 
      results << item
   end
   return results

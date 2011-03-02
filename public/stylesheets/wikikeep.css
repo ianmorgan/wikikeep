@@ -66,3 +66,15 @@ table.form td.field .field_with_errors input {
   list-style: square;
   color: red;
 }
+
+.content_item  {
+  background: #EEEEEE;
+  padding:5px;
+  border: 1px solid blue;
+}
+
+.content_item pre {
+ font: Tahoma, sans-serif;
+ font-size: 1.2em; 
+
+}

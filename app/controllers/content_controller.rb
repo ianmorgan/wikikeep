@@ -6,8 +6,7 @@ class ContentController < ApplicationController
   before_filter :check_account
 
   def add 
-     #@content = ContentCommand.new
-     redirect_to :controller => 'add_content', :action => 'start'
+    redirect_to :controller => 'add_content', :action => 'start'
   end
 
   def search
@@ -23,7 +22,8 @@ class ContentController < ApplicationController
 
 
   def view
-     @content_item = ContentItem.for_account_id(account_id).find(params[:id]) 
+     @content_item = ContentItem.for_account_id(account_id).find(params[:id])
+     @content_item.content.html_safe 
   end
 
   def home
@@ -31,15 +31,5 @@ class ContentController < ApplicationController
   end
 
 
-#  def create 
-#     @content = ContentCommand.new(params[:content_command])
-#     if @content.valid?
-#     	service = ContentService.new
-#     	result = service.add_content(account_id,params[:content_command])
-#     	redirect_to  :action => :view, :id => result
-#     else
-#	render :action => "add" 
-#     end  
-#  end
  
 end
