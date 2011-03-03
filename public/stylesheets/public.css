@@ -1,12 +1,5 @@
 /* CSS Document */
 
-
-/*PAGE LAYOUT*/
-body {
-  background-color: #666666;
-  color: #666666;
-}
-
 #page {
   background-color: white;
   margin: 40px auto;
@@ -15,7 +8,6 @@ body {
 }
 
 #headercontent{
-   font: 0.8em Tahoma, sans-serif;
    background-color: #2424DB;
    color: #666666;
    padding: 10px;
@@ -24,9 +16,10 @@ body {
    margin-left:200px;
    height:100px;
 }
+
 #topheader{
   background-color:white;
-  background-image:url(/images/wikikeep.png);
+  background-image:url(/images/wikikeep2.png);
   background-repeat:no-repeat;
   background-position:0px 8px;
   height:150px;  
@@ -46,11 +39,13 @@ body {
     padding-left: 10px;
     padding-right: 20px;
 }
+
 #headermenu ul li a:hover{
     text-decoration:none;
     color: #101010;
     background:inherit;   
 }
+
 #headermenu ul li a{
     text-decoration:none;
     color: white;   
@@ -60,8 +55,6 @@ body {
 
 /* user defined page content within this area */ 
 #pagecontent {
-   font: Tahoma, sans-serif;
-   font-size: 0.8em;
    background-color: white;
    color: #666666;
    padding: 10px;
@@ -91,28 +84,9 @@ body {
 }
 
 
-h1 {
-  color:#2424DB;
-  font-family:Tahoma,sans-serif;
-  font-size:28px;
-  font-weight:normal;
-}
-
-h2 {
-  color:#2424DB;
-  font-family:Tahoma,sans-serif;
-  font-size:24px;
-  font-weight:normal;
-}
-
-h3 {
-  color:#2424DB;
-  font-family:Tahoma,sans-serif;
-  font-size:22px;
-  font-weight:normal;
-}
 
 /* Floating panels to right */
+/*
 .graypanel{
   background-color:rgb(224,213,197);
   font: 0.8em Tahoma, sans-serif;
@@ -148,14 +122,13 @@ h3 {
 }
 .graypanel  a:hover{
   color: #101010;
-  /*background-color:rgb(224,213,197); */
-}
+ }
+*/
 
 /* Main Navigation Menu */
 #navigation {
-  padding-top:5px;
-  font-family:Tahoma,sans-serif;
-  font-size: 1.0em;
+  padding-top:4px;
+  font-size: 16px;
 }
 #navigation ul {
   list-style: none;
