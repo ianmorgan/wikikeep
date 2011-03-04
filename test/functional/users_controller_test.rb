@@ -24,7 +24,8 @@ class UsersControllerTest < ActionController::TestCase
 
   test "should create user" do
     assert_difference('User.count') do
-      post :create, :user => @user.attributes
+      # use facrory to geneate unique name to avoid db constraint  
+      post :create, :user => Factory.attributes_for(:user)
     end
 
     assert_redirected_to user_path(assigns(:user))

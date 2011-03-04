@@ -17,7 +17,7 @@ Factory.sequence :email do |n|
 end
 
 Factory.define :user do |f|
-   f.email Factory.next(:email)   
+   f.user_name Factory.next(:email)   
    f.given_names 'John'
    f.family_name 'Smith' 
    f.password_hash 'password'

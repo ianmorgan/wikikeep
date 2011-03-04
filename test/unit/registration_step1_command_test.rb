@@ -2,7 +2,7 @@ require 'test_helper'
 
 class RegistrationStep1CommandTest < ActiveSupport::TestCase
   def setup 
-   @command = RegistrationStep1Command.new
+     @command = RegistrationStep1Command.new
   end
 
   test "validates account name is supplied" do 
@@ -11,7 +11,7 @@ class RegistrationStep1CommandTest < ActiveSupport::TestCase
   end 
 
   test "validates account name is at least 6 characters" do
-     @command.account_name = 'test' 
+     @command.account_name = 'short' 
      assert @command.valid? == false
      assert field_has_error(@command, :account_name)  
   end
@@ -27,6 +27,14 @@ class RegistrationStep1CommandTest < ActiveSupport::TestCase
      assert @command.valid? == false
      assert field_has_error(@command, :account_name)  
   end
+
+  test "validates account name not already in use" do
+     Factory.create(:account, :name => 'this_account_is_taken')
+     @command.account_name = 'This_account_is_taken' 
+     assert @command.valid? == false
+     assert field_has_error(@command, :account_name)  
+  end
+
 
   test "valid account name " do
      @command.account_name = 'account_name01' 
