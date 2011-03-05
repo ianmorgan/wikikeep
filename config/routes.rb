@@ -22,7 +22,12 @@ Wikikeep::Application.routes.draw do
   
   match 'add_content/:action(/:id)', :controller => 'add_content'
 
-
+  scope ':account_name/admin', :as => 'admin' do
+  #scope ':account_name/admin'   
+    match 'account/:action(/:id)', :controller => 'account_admin'
+    match 'user/:action(/:id)', :controller => 'user_admin'
+  end
+ 
 
   #named routes for common links
   match 'login' => 'login#show', :as => :login

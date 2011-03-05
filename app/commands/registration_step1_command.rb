@@ -10,7 +10,7 @@ class RegistrationStep1Command < BaseCommand
   
   def account_name_cannot_be_in_use
     if Account.find_by_name(account_name)
-      errors.add(:account_name, "Sorry. This account name is already in use")
+      errors.add(:account_name, "Sorry, this name is already in use")
     end
   end
  

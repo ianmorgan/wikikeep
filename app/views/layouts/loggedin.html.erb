@@ -17,8 +17,9 @@
       <div id="headercontent">
        <div id="headermenu">
 	   <ul>
-		<li><%= link_to "Home", :controller => :home, :action => :index %></li>
 		<li><%= link_to "Logout", :controller => :login, :action => :logout %></li>
+                 <li><%= link_to "Admin", :controller => :account_admin, :action => :home, :account_name => account_name %></li>
+		<li><%= link_to "Home", :controller => :home, :action => :index %></li>
 		
 	    </ul>
        </div>
