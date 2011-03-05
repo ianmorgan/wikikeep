@@ -24,6 +24,14 @@ class RegistrationStep2CommandTest < ActiveSupport::TestCase
      assert field_has_error(@command, :password)  
   end
 
+ test "validates user name not already in use" do
+     Factory.create(:user, :user_name => 'this_user_name_is_taken@example.com')
+     @command.user_name = 'this_user_name_is_taken@example.com' 
+     assert @command.valid? == false
+     assert field_has_error(@command, :user_name)  
+  end
+
+
   test "valid command passes validation" do
      @command = Factory.build(:registration_step2_command)  
      assert @command.valid?   

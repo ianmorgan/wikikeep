@@ -16,4 +16,10 @@ class User < ActiveRecord::Base
      find(:first, :conditions => { :user_name  => user_name, :password_hash => password }) 
   end
 
+ def self.find_by_user_name(name)
+    # ensures case insensitive match
+    # will need to consider a more performant solution if volumes increase 
+    User.find(:first, :conditions => [ "lower(user_name) = ?", name.downcase ]) if name
+ end
+
 end
