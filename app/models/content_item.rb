@@ -5,6 +5,14 @@ class ContentItem < ActiveRecord::Base
 
   validates_presence_of :name, :content, :account
 
-  scope :for_account_id, lambda { |account_id| where("account_id = ?", account_id) }  
+  scope :for_account_id, lambda { |account_id| where("account_id = ?", account_id) }
+
+  def markedup_content
+    return "" if content.nil?
+    
+    r = RedCloth.new content
+    r.to_html.html_safe    
+  end
+  
 
 end
