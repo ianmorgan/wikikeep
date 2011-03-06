@@ -1,5 +1,5 @@
 class AccountAdminController < ApplicationController
-   layout :determine_layout
+   layout "admin"
    
    def home
    end
