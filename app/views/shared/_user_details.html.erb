@@ -1,0 +1,24 @@
+<table class="form">
+ <tr>
+   <td class="label"><%= f.label :user_name, 'Your username:' %></td>
+   <td class="field"><%= f.text_field :user_name, :size => 32 %></td>
+ </tr>
+ <tr>
+   <td class="label"><%= f.label :given_names, 'Given name(s):' %></td>
+   <td class="field"><%= f.text_field :given_names, :size => 32 %></td>
+ </tr>
+ <tr>
+   <td class="label"><%= f.label :family_name, 'Family name:' %></td>
+   <td class="field"><%= f.text_field :family_name, :size => 32 %></td>
+ </tr>
+ <tr>
+   <td class="label"><%= f.label :password, 'Your password:' %></td>
+   <td class="field"><%= f.password_field :password, :size => 16 %></td>
+ </tr>
+ <tr>
+   <td class="label"><%= f.label :password_confirmation, 'Confirm password:' %></td>
+   <td class="field"><%= f.password_field :password_confirmation, :size => 16 %></td>
+ </tr>
+
+</table>
+

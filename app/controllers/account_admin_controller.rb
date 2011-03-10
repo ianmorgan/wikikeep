@@ -5,7 +5,13 @@ class AccountAdminController < ApplicationController
    end
 
    def add_user
+     @add_user_command = RegistrationStep2Command.new()
    end
+
+   def add_user_complete
+     render :text => 'to be implemented'
+   end
+
 
    def options
    end
