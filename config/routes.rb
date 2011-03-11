@@ -6,10 +6,6 @@ Wikikeep::Application.routes.draw do
 
   resources :users
 
-  resources :tag_datas
-
-  resources :content_items
-
   match 'login/:action(/:id)', :controller => 'login'
 
   match ':account_name/content/:action(/:id)', :controller => 'content'
