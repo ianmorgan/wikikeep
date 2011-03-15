@@ -96,3 +96,15 @@ table.form td.field .field_with_errors input {
   font: Tahoma, sans-serif;
   font-size: 1.2em; 
 }
+
+#tags{
+   margin-top:-30px;
+   padding-right:10px;
+   padding-left:10px;
+   padding-bottom:10px;
+   padding-top:1px;
+
+  -moz-border-radius: 10px 10px 10px 10px;
+  background-color:#ffeecc;-moz-border-radius: 10px 10px 10px 10px;
+}
+
