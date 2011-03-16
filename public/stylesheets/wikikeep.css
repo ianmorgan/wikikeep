@@ -26,6 +26,10 @@ h3 {
   font-weight:normal;
 }
 
+button {
+  background-color: #2424DB;
+  color:white;
+}
 
 
 ul li {
@@ -105,6 +109,21 @@ table.form td.field .field_with_errors input {
    padding-top:1px;
 
   -moz-border-radius: 10px 10px 10px 10px;
-  background-color:#ffeecc;-moz-border-radius: 10px 10px 10px 10px;
+  background-color:#ffeecc;
+background-color: #ffcc99;
+  background-color:#FFE5C1;
+
+}
+
+#tags .header {
+   padding:10px;
+   background-color: #ffbb99;
+   background-color:#FBB04C;
+   margin-right:-10px;
+   margin-left:-10px;
+   margin-bottom:10px;
+  font-size:20px;
+  color:#FFFFFF;
+-moz-border-radius: 10px 10px 0px 0px;
 }
 

@@ -61,12 +61,17 @@
 /* user defined page content within this area */ 
 #pagecontent {
    background-color: white;
+ background-color: #ffcc99;
+  background-color:#ffeecc;
+background-color:#FEEFDC;
+
    color: #666666;
    padding: 10px;
    text-align: left;
    margin-top: 5px;
    width:570px;
-   display:block;   
+   display:block;  
+-moz-border-radius: 10px 10px 10px 10px; 
  }
 
 #pagecontent a {
@@ -76,6 +81,8 @@
 #pagecontent a:hover {
    color: #101010;
 }
+
+
 
 
 /*TEXT STYLES  -- are these used ? */
