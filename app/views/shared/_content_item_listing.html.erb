@@ -1,7 +1,9 @@
-  <h2><%= link_to result['name'],  :controller => 'content', :action => 'view', :id => result['id']%> </h2>
+<div class="content_item_summary">
+  <h3><%= link_to result['name'],  :controller => 'content', :action => 'view', :id => result['id']%> </h3>
   <%= result['summary'] %> </br>
   Tags: 
   <% result['tags'].each do |tag|  %> 
      <%= link_to tag,  :account_name => account_name, :controller => 'tag', :action => 'view', :name => tag %> &nbsp;
   <% end %>    
+</div>
 

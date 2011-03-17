@@ -2,26 +2,29 @@
 
 body {
   background-color: #666666;
-  color: #666666;
+  color: #444444;
   font-family: Verdana,Arial,sans-serif;
   font-size:   13px;
   line-height: 17px;
 }
 
 h1 {
-  color:#2424DB;
+  x_color:#2424DB;
+  color:#333333;
   font-size:28px;
   font-weight:normal;
 }
 
 h2 {
-  color:#2424DB;
+  x_color:#2424DB;
+  color:#333333;
   font-size:24px;
   font-weight:normal;
 }
 
 h3 {
-  color:#2424DB;
+  x_color:#2424DB;
+  color:#333333;
   font-size:22px;
   font-weight:normal;
 }
@@ -91,9 +94,9 @@ table.form td.field .field_with_errors input {
 }
 
 .content_item  {
-  background: #EEEEEE;
+  z-background: #EEEEEE;
   padding:5px;
-  border: 1px solid blue;
+  z-border: 1px solid blue;
 }
 
 .content_item pre {
@@ -108,10 +111,9 @@ table.form td.field .field_with_errors input {
    padding-bottom:10px;
    padding-top:1px;
 
-  -moz-border-radius: 10px 10px 10px 10px;
-  background-color:#ffeecc;
-background-color: #ffcc99;
-  background-color:#FFE5C1;
+   -moz-border-radius: 10px 10px 10px 10px;
+   background-color: #ffcc99;
+   x_background-color:#ffddbb;
 
 }
 
@@ -122,8 +124,34 @@ background-color: #ffcc99;
    margin-right:-10px;
    margin-left:-10px;
    margin-bottom:10px;
-  font-size:20px;
-  color:#FFFFFF;
--moz-border-radius: 10px 10px 0px 0px;
+   font-size:20px;
+   color:#FFFFFF;
+   -moz-border-radius: 10px 10px 0px 0px;
 }
+
+#pagecontent .header {
+   padding:10px;
+   background-color:#FBB04C;
+   margin-top:-10px;
+   margin-right:-10px;
+   margin-left:-10px;
+
+   margin-bottom:10px;
+   font-size:20px;
+   color:#FFFFFF;
+   -moz-border-radius: 10px 10px 0px 0px;
+}
+
+
+#xxpagecontent .content_item_summary {
+   background-color:#ffddbb;
+   padding-bottom :5px;
+-moz-border-radius: 5px 5px 5px 5px;
+}
+
+#pagecontent .content_item_summary a {
+   color:#2200CC;
+  
+}
+
 
