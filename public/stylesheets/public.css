@@ -28,11 +28,6 @@
   background-position:0px 8px;
   height:120px;  
 }
-/*
-#infopanel{
-   margin-top:20px;
-}
-*/
 
 /* quick links at top right */
 #headermenu ul li {
@@ -47,7 +42,7 @@
 
 #headermenu ul li a:hover{
     text-decoration:none;
-    color: #101010;
+    color: black;
     background:inherit;   
 }
 
@@ -84,12 +79,12 @@
 
 
 /*TEXT STYLES  -- are these used ? */
-.bodytext {
+.zz-bodytext {
 	font: 0.7em Tahoma, sans-serif;
 	color: #666666;
 }
 
-#topheader .bodytext {
+#topheader .zz-bodytext {
 	margin-left: 10px;
 }
 
@@ -115,20 +110,16 @@
   padding: 3px;
   -moz-border-radius:5px;
 }
+
+
 #navigation a:link, #navigation a:visited {
   padding-left: 8px;
   padding-right: 20px;
-  color: #DDDDDD;
-color:#2424DB;
-color:#FFF;
-  /*background-color: white;*/ 
+  color:#FFF;
   text-decoration: none;
-  /*border-left: 1px solid #666666;*/
 }
-#navigation a:hover {
- padding-left: 8px; 
- color: #FFFFFF;
- /*border-left: 2px solid #101010;*/
+#navigation a:hover { 
+ color: #333333;
 }
 
 

@@ -1,4 +1,5 @@
-<h1>Add Content: Step 1</h1>
+<div class="header">Add: Step 1</div>
+
 <p>Enter your page name:</p>
 
 <%= render "shared/simple_error_messages", :target => @add_content_step1_command %>
@@ -6,6 +7,6 @@
 <div class="form">
    <div class="field"><%= f.text_field :name %></div>
 </div>
-<%= f.submit :value => 'Continue' %>
+<%= f.submit :value => 'Continue',:class => 'submit' %>
 <% end %>
 

@@ -1,4 +1,4 @@
-<h1>Add Content: Step 1</h1>
+<div class="header">Add: Step 2</div>
 <p>Enter your page content. </p>
 
 <%= render "shared/simple_error_messages", :target => @add_content_step2_command %>
@@ -6,6 +6,6 @@
 <div class="form">
  <div class="field"><%= f.text_area :content, {:cols => 80, :rows => 20} %></div>
 </div>
-<%= f.submit :value => 'Continue' %>
+<%= f.submit :value => 'Continue', :class => 'submit' %>
 <% end %>
 

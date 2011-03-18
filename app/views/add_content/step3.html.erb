@@ -1,4 +1,4 @@
-<h1>Add Content: Step 3</h1>
+<div class="header">Add: Step 3</div>
 <p>Enter your page tags: </p>
 
 <%= render "shared/simple_error_messages", :target => @add_content_step3_command %>
@@ -6,6 +6,6 @@
 <div class="form">
   <div class="field"><%= f.text_field :tags %></div>
 </div>
-<%= f.submit :value => 'Continue' %>
+<%= f.submit :value => 'Continue', :class => 'submit' %>
 <% end %>
 
