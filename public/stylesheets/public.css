@@ -5,7 +5,7 @@
   margin: 40px auto;
   padding: 0 40px 20px;
   width: 870px;
-  -moz-border-radius: 10px 10px 10px 10px;
+  -moz-border-radius: 15px 15px 15px 15px;
 }
 
 #headercontent{
@@ -18,7 +18,7 @@
    margin-top: 15px;
    margin-left:200px;
    height:80px;
-   -moz-border-radius: 10px 10px 10px 10px;
+   -moz-border-radius: 0px 15px 0px 15px;
 }
 
 #topheader{
@@ -69,7 +69,7 @@
    margin-top: 5px;
    width:570px;
    display:block;  
-   -moz-border-radius: 10px 10px 10px 10px; 
+   -moz-border-radius: 0px 15px 0px 15px; 
  }
 
 #pagecontent a {
@@ -95,49 +95,11 @@
 
 
 
-/* Floating panels to right */
-/*
-.graypanel{
-  background-color:rgb(224,213,197);
-  font: 0.8em Tahoma, sans-serif;
-  color: #666666;
-  padding:10px; 
-  margin-bottom:10px;
-  float: top;
-}
-
-.graypanel p {
-   font: Tahoma, sans-serif;
-   color: #666666;
-}
-.graypanel .title {
-	font-size:20px;
-	font-weight:normal;
-	color:rgb(229,25,55);
-}
-.graypanel .smalltitle {
-	font-size:14px;
-	font-weight:normal;
-	color:rgb(229,25,55);
-}
-.graypanel  a{
-	font: Tahoma, sans-serif;
-	text-decoration:underline;
-        color: #444444;
-}
-.graypanel  a:visited{
-  font: Tahoma, sans-serif;
-  text-decoration:underline;
-  color: #444444;
-}
-.graypanel  a:hover{
-  color: #101010;
- }
-*/
 
 /* Main Navigation Menu */
 #navigation {
   padding-top:4px;
+  margin-top:-15px;
   font-size: 16px;
 }
 #navigation ul {
@@ -169,40 +131,6 @@ color:#FFF;
  /*border-left: 2px solid #101010;*/
 }
 
-/* for new page */
-#news h2 {
-  font-size:18px;
-}
-#news div.newstext {
-  margin-top: -10px;
-  margin-bottom: 5px;
-}
-
-#news div.allnewletters {
-  float:right;
-  width:150px;
-  padding:0px 10px 20px 10px;
-  margin-right:40px;
-  margin-top:30px;
-  background-color: rgb(229,25,55);
-  color:white; 
-}
-
-#news div.allnewletters h2{
-  color:white; 
-  font-size:20px;
-}
-
-#news div.allnewletters a{
-  color:white;
-  text-decoration:none; 
-}
-
-#news div.allnewletters a:hover{
-  color:#101010;
-  text-decoration:none;
-  background-color: rgb(229,25,55);
-}
 
 .errormessage {
   color:red;

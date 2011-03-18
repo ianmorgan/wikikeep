@@ -105,13 +105,13 @@ table.form td.field .field_with_errors input {
 }
 
 #tags{
-   margin-top:-30px;
+   margin-top:5px;
    padding-right:10px;
    padding-left:10px;
    padding-bottom:10px;
    padding-top:1px;
 
-   -moz-border-radius: 10px 10px 10px 10px;
+   -moz-border-radius: 0px 15px 0px 15px;
    background-color: #ffcc99;
    x_background-color:#ffddbb;
 
@@ -121,17 +121,19 @@ table.form td.field .field_with_errors input {
    padding:10px;
    background-color: #ffbb99;
    background-color:#FBB04C;
+   border-left:5px solid #ff6600;
    margin-right:-10px;
    margin-left:-10px;
    margin-bottom:10px;
    font-size:20px;
    color:#FFFFFF;
-   -moz-border-radius: 10px 10px 0px 0px;
+   -moz-border-radius: 0px 15px 0px 0px;
 }
 
 #pagecontent .header {
    padding:10px;
    background-color:#FBB04C;
+   border-left:5px solid #ff6600;
    margin-top:-10px;
    margin-right:-10px;
    margin-left:-10px;
@@ -139,7 +141,7 @@ table.form td.field .field_with_errors input {
    margin-bottom:10px;
    font-size:20px;
    color:#FFFFFF;
-   -moz-border-radius: 10px 10px 0px 0px;
+   -moz-border-radius: 0px 15px 0px 0px;
 }
 
 
