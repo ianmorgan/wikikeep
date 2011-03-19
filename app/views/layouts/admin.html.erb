@@ -18,6 +18,7 @@
        <div id="headermenu">
 	   <ul>
 		<li><%= link_to "Logout", :controller => :login, :action => :logout %></li>
+                <li><%= link_to "About", about_path  %></li>
                  <li><%= link_to "Admin", :controller => :account_admin, :action => :home, :account_name => account_name %></li>
 		<li><%= link_to "Home", :controller => :home, :action => :index %></li>
 		
@@ -34,11 +35,19 @@
 
      </ul>
    </div>
-   
-   
+
+
+   <table width="100%" style="margin-top:5px;" > 
+    <tr>
+     <td valign="top">
        <div id="pagecontent">
           <%= yield %>
        </div>
+     </td>
+   </tr>
+   </table>
+   
+   
    </tr>
 </table>
    

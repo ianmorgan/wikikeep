@@ -1,7 +1,6 @@
-<h2><%= @tag_name %></h2>
+<h1 class="header">Tag: <%= @tag_name %></h1>
 
 <p>The following pages are linked by this tag</P>
-
 
 <% @results.each do |result| %>
   <%= render "shared/content_item_listing", :result => result %>
