@@ -9,9 +9,7 @@
 }
 
 #headercontent{
-   /*background-color: #2424AA;*/
    background-color: #2200CC;
-
    color: #666666;
    padding: 10px;
    text-align: left;
@@ -74,20 +72,6 @@
 #pagecontent a:hover {
    color: #101010;
 }
-
-
-
-
-/*TEXT STYLES  -- are these used ? */
-.zz-bodytext {
-	font: 0.7em Tahoma, sans-serif;
-	color: #666666;
-}
-
-#topheader .zz-bodytext {
-	margin-left: 10px;
-}
-
 
 
 

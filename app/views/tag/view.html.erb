@@ -1,6 +1,6 @@
-<h1 class="header">Tag: <%= @tag_name %></h1>
+<h1 class="header">Tag: <span style="color:#333333"><%= @tag_name %><span></h1>
 
-<p>The following pages are linked by this tag</P>
+<p>The following pages have been tagged with <strong><%= @tag_name %></strong></P>
 
 <% @results.each do |result| %>
   <%= render "shared/content_item_listing", :result => result %>
