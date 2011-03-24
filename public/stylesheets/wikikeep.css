@@ -34,6 +34,11 @@ input.submit {
  color: #ff5511;
 }
 
+input.cancel {
+ color: #555555;
+}
+
+
 ul li {
   list-style: square;
   margin-left: -10px;
@@ -141,6 +146,9 @@ table.form td.field .field_with_errors input {
    -moz-border-radius: 0px 15px 0px 0px;
 }
 
+#pagecontent .header .highlight{
+   color:#333333;
+}
 
 #xxpagecontent .content_item_summary {
    background-color:#ffddbb;

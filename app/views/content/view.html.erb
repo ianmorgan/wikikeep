@@ -1,10 +1,11 @@
-<div class="content_item">
+<h2 class="header">Page: <span class="highlight"><%= @content_item.name%><span></h2>
 
-  <h2><%= @content_item.name%></h2>
+<div class="markedup_content">  
+  <%= @content_item.markedup_content%>
+</div>
 
-  <div class="markedup_content">  
-    <%= @content_item.markedup_content%>
-  </div>
+<%= form_tag( {:action => 'edit', :id => @content_item.id}, :methood => 'get' ) do |f| %>
+  <%= submit_tag('Edit', :class => 'submit') %>
+<% end %>
 
-   <%= link_to "Edit", :account_name => account_name, :action => 'edit', :id => @content_item.id %>
-</content_item>
+

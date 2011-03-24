@@ -1,17 +1,10 @@
-
-<div class="content_item">
-
-  <h2>Edit: <%= @content_item.name%></h2>
+<h2 class="header">Edit: <span class="highlight"><%= @content_item.name%><span></h2>
 
 <%= render "shared/simple_error_messages", :target => @update_content_command %>
 <%= form_for(@update_content_command, :url => {:action => 'update', :id => @content_item.id} ) do |f| %>
-   <div class="label"><%= f.label :content, 'Page content:' %></div>
-   <div class="field"><%= f.text_area :content %></div>
- 
-<%= f.submit :value => 'Update' %>
-<%= f.submit :value => 'Cancel' %>
+   <div class="field"><%= f.text_area :content,  {:cols => 80, :rows => 20, :class => 'enter_content'} %></div>
+<%= f.submit :value => 'Update', :class => 'submit' %>
+<%= f.submit :value => 'Cancel', :class => 'cancel' %>
 <% end %>
-
-</content_item>
 
 
