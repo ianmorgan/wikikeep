@@ -19,7 +19,7 @@ class TagController < ApplicationController
          item['name'] = content_item.name
          item['tags'] = content_item.tags.each.collect {|t|t.tag_data.name}
          item['summary'] = content_item.content[0..99]
-         @results << item
+      @results << item
       end
     else
       render :text => 'tag not found'

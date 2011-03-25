@@ -3,7 +3,7 @@
   <%= result['summary'] %> </br>
   Tags: 
   <% result['tags'].each do |tag|  %> 
-     <%= link_to tag,  :account_name => account_name, :controller => 'tag', :action => 'view', :name => tag %> &nbsp;
+     <%= link_to tag,  :account_name => account_name, :controller => 'tag', :action => 'view', :name => tag, :id => nil %> &nbsp;
   <% end %>    
 </div>
 
