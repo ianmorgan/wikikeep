@@ -4,8 +4,8 @@
 <%= render "shared/simple_error_messages", :target => @add_content_step2_command %>
 <%= form_for(@add_content_step2_command, :url => {:action => 'step2_complete'} ) do |f| %>
 <div class="form">
- <div class="field"><%= f.text_area :content,  {:cols => 80, :rows => 20, :class => 'enter_content'} %></div>
+ <div class="field"><%= f.text_area :content,  {:cols => 80, :rows => 20, :class => 'enter_content initial_focus'} %></div>
 </div>
-<%= f.submit :value => 'Continue', :class => 'submit' %>
+<%= f.submit :value => 'Continue', :class => 'submit default_button' %>
 <% end %>
 

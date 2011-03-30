@@ -5,8 +5,8 @@
 <%= render "shared/simple_error_messages", :target => @add_content_step1_command %>
 <%= form_for(@add_content_step1_command, :url => {:action => 'step1_complete'} ) do |f| %>
 <div class="form">
-   <div class="field"><%= f.text_field :name %></div>
+   <div class="field"><%= f.text_field :name, :class => 'initial_focus' %></div>
 </div>
-<%= f.submit :value => 'Continue',:class => 'submit' %>
+<%= f.submit :value => 'Continue',:class => 'submit default_button' %>
 <% end %>
 
