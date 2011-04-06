@@ -7,6 +7,9 @@
   <title>WikiKeep: <%= yield :title %></title>
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.min.js" type="text/javascript"></script>
  
+  <%= stylesheet_link_tag "token-input" %>  
+  <%= javascript_include_tag "jquery.tokeninput" %>  
+
   <%= stylesheet_link_tag 'wikikeep' %>
   <%= stylesheet_link_tag 'public' %>  <!-- wrong - should be moved out into its own loggedin style sheet -->
   <%= stylesheet_link_tag 'ie6_tweaks' if ie6? %>  

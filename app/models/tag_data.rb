@@ -1,4 +1,5 @@
 class TagData < ActiveRecord::Base
+ set_table_name 'tag_datas'
  has_many :tags
  has_many :content_items, :through => :tags, :source => :content_item
  belongs_to :account
