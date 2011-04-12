@@ -11,9 +11,9 @@ and form part of the URL</p>
 <table class="form">
  <tr>
    <td class="label"><%= f.label :account_name, 'Your account name:' %></td>
-   <td class="field"><%= f.text_field :account_name %></td>
+   <td class="field"><%= f.text_field :account_name, :class => 'initial_focus'%></td>
  </tr>
 </table>
-<%= f.submit :value => 'Continue' %>
+<%= f.submit :value => 'Continue', :class => 'submit default_button' %>
 <% end %>
 

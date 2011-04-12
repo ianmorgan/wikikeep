@@ -6,7 +6,7 @@ email address. You can add other users after registration.</p>
 <%= render "shared/simple_error_messages", :target => @registration_step2_command %>
 <%= form_for(@registration_step2_command, :url => {:action => 'step2_complete'} ) do |f| %>
   <%= render :partial => "shared/user_details", :locals => {:f => f} %>
-<%= f.submit :value => 'Continue' %>
+<%= f.submit :value => 'Continue', :class => 'submit default_button'%>
 <% end %>
 
 
