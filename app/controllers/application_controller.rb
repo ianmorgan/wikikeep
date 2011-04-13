@@ -48,6 +48,11 @@ private
   def account_id 
     session[:current_user][:account_id]
   end
+  
+  def user_id 
+    session[:current_user][:user_id]
+  end
+  
 
    
   helper_method :ie6?  

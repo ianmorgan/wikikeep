@@ -8,11 +8,12 @@ class ContentService
    #
    # Returns the id of the created record
    #
-   def add_content(account_id, content)
+   def add_content(account_id, user_id, content)
 
      content_item = ContentItem.new(:name => content[:name],
            :content => content[:content])
      content_item.account_id = account_id
+     content_item.created_by_user_id = user_id
      tags =  ParsingService.new.parse_tags(content[:tags])
   
      tags.each do |tag|  

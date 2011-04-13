@@ -14,6 +14,8 @@ class LoginController < ApplicationController
        current_user[:account_attibutes] = @user.account.attributes
        current_user[:account_name] = @user.account.name
        current_user[:account_id] = @user.account.id
+       current_user[:user_id] = @user.id
+
 
        session[:current_user] = current_user
        redirect_to :controller => 'content', :action => 'home', :account_name => @user.account.name

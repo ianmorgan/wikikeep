@@ -2,6 +2,7 @@ class ContentItem < ActiveRecord::Base
   has_many :tags
   has_many :tags_data, :through => :tags, :source => :tag_data
   belongs_to :account
+  belongs_to :created_by, :class_name => "User", :foreign_key => "created_by_user_id"
 
   validates_presence_of :name, :content, :account
 

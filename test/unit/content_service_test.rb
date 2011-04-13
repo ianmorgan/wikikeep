@@ -7,12 +7,13 @@ class ContentServiceTest < ActiveSupport::TestCase
 
      data = {:name => 'Test content', :content => 'Lorem ipsum...', :tags => 'ruby test'} 
 
-     id  = service.add_content(1,data) 
+     id  = service.add_content(1,2,data) 
  
      content_item = ContentItem.find(id)
      assert_equal 'Test content', content_item.name
      assert_equal 'Lorem ipsum...', content_item.content
      assert_equal 1, content_item.account_id
+     assert_equal 2, content_item.created_by_user_id
      
      tags = content_item.tags_data.collect{ |t| t.name }
      puts tags

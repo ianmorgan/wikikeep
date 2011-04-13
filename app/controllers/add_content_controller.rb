@@ -4,7 +4,8 @@ class AddContentController < BaseStepController
   def start 
      session[:add_content_step] = 'start'
      session[:add_content_data] = Hash.new
-  end
+  end 
+ 
 
   def step1 
      if session[:add_content_step] != 'start'
@@ -69,10 +70,9 @@ class AddContentController < BaseStepController
      attrs = session[:add_content_data][:step1].attributes
      attrs = attrs.merge(session[:add_content_data][:step2].attributes)
      attrs = attrs.merge(session[:add_content_data][:step3].attributes)
-     attrs = attrs.symbolize_keys
-puts attrs     	
+     attrs = attrs.symbolize_keys    	
      service = ContentService.new
-     result = service.add_content(account_id, attrs)
+     result = service.add_content(account_id, user_id, attrs)
      redirect_to  :account_name => account_name, :controller => 'content', :action => 'view', :id => result
 #     else
 #	render :action => "add" 
