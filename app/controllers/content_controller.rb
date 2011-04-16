@@ -17,6 +17,7 @@ class ContentController < ApplicationController
      # todo - check that search term has been provided
      search_service = SearchService.new
      @results = search_service.search(account_name,params[:q]) 
+     puts @results
      render :template => 'content/search_results' 
   end
 

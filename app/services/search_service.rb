@@ -18,7 +18,9 @@ class SearchService
       :manu_exact => item.account.name,
       :keywords => item.tags.each.collect{ |t| t.tag_data.name }.join(','),
       :subject => item.content[0..99],
-      :text => item.content}]
+      :text => item.content,
+     # :last_modified => Date.new,
+      :author => item.created_by.user_name}]
     response = solr.add documents
     response = solr.commit
     #todo - add error handling !
@@ -30,8 +32,6 @@ class SearchService
      documents = [
      {:id => id, 
       :text => content}]
-  puts ">>update text<<"
-  puts documents[0]
     response = solr.add documents
     response = solr.commit
     #todo - add error handling !
@@ -57,6 +57,7 @@ class SearchService
      item['tags'] = doc['keywords'].split(',')
      item['summary'] = doc['subject']
      item['summary'].html_safe if item['summary'] 
+     item['created_by'] = doc['author']
      results << item
   end
   return results
