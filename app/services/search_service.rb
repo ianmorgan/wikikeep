@@ -19,7 +19,7 @@ class SearchService
       :keywords => item.tags.each.collect{ |t| t.tag_data.name }.join(','),
       :subject => item.content[0..99],
       :text => item.content,
-     # :last_modified => Date.new,
+      :last_modified => Time.new.strftime("%Y-%m-%dT%H:%M:%SZ"),
       :author => item.created_by.user_name}]
     response = solr.add documents
     response = solr.commit
@@ -58,6 +58,7 @@ class SearchService
      item['summary'] = doc['subject']
      item['summary'].html_safe if item['summary'] 
      item['created_by'] = doc['author']
+     item['updated_at'] = doc['last_modified']
      results << item
   end
   return results
