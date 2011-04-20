@@ -19,9 +19,11 @@ class SearchService
       :keywords => item.tags.each.collect{ |t| t.tag_data.name }.join(','),
       :subject => item.content[0..99],
       :text => item.content,
+      :created_at_dt => item.created_at.strftime("%Y-%m-%dT%H:%M:%SZ"),
       :last_modified => Time.new.strftime("%Y-%m-%dT%H:%M:%SZ"),
-      #:modifier_s => item.updated_by.user_name,
       :author => item.created_by.user_name}
+      
+    document  = document.merge({:modifier_s => item.updated_by.user_name}) if item.updated_by  
     response = solr.add document
     response = solr.commit
     #todo - add error handling !
@@ -61,7 +63,8 @@ class SearchService
      item['summary'] = doc['subject']
      item['summary'].html_safe if item['summary'] 
      item['created_by'] = doc['author']
-     item['updated_by'] = doc['modifier']
+     item['updated_by'] = doc['modifier_s']
+     item['created_at'] = xml_date_to_time(doc['created_at_dt'])
      item['updated_at'] = xml_date_to_time(doc['last_modified'])
      results << item
   end

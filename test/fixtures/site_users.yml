@@ -16,4 +16,10 @@ demo:
   account_id:  2 
   password_hash: password
 
-
+lulu:
+  id:          3
+  user_name:   lulu@example.com
+  given_names: Lu 
+  family_name: Lu
+  account_id:  2 
+  password_hash: woof

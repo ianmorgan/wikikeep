@@ -5,6 +5,7 @@
   <% result['tags'].each do |tag|  %> 
      <%= link_to tag,  :account_name => account_name, :controller => 'tag', :action => 'view', :name => tag, :id => nil %> &nbsp;  
   <% end %>  
-   (author = <%= result['created_by'] %>, last updated at =<%=result['updated_at']%>)  
+   (author = <%= result['created_by'] %>, created  at =<%=result['created_at']%>) 
+   (modifier = <%= result['updated_by'] %>, updated at =<%=result['updated_at']%>)  
 </div>
 
