@@ -12,7 +12,7 @@ class SearchService
   #  
   #
   def add_content_item(item)
-     documents = [
+     document = 
      {:id => item.id, 
       :name => item.name, 
       :manu_exact => item.account.name,
@@ -20,18 +20,21 @@ class SearchService
       :subject => item.content[0..99],
       :text => item.content,
       :last_modified => Time.new.strftime("%Y-%m-%dT%H:%M:%SZ"),
-      :author => item.created_by.user_name}]
-    response = solr.add documents
+      #:modifier_s => item.updated_by.user_name,
+      :author => item.created_by.user_name}
+    response = solr.add document
     response = solr.commit
     #todo - add error handling !
   end
 
   # Updates the text index for an existing content item
   #
-  def update_text(id, content)
+  def update_text(id, content,updated_by)
      documents = [
      {:id => id, 
-      :text => content}]
+      :text => content,
+      :last_modified => Time.new.strftime("%Y-%m-%dT%H:%M:%SZ"),
+      :modifier_s => updated_by}]
     response = solr.add documents
     response = solr.commit
     #todo - add error handling !
@@ -58,7 +61,8 @@ class SearchService
      item['summary'] = doc['subject']
      item['summary'].html_safe if item['summary'] 
      item['created_by'] = doc['author']
-     item['updated_at'] = doc['last_modified']
+     item['updated_by'] = doc['modifier']
+     item['updated_at'] = xml_date_to_time(doc['last_modified'])
      results << item
   end
   return results
@@ -68,5 +72,12 @@ private
   def solr 
     RSolr.connect :url => 'http://127.0.0.1:8983/solr'
   end
+  
+  def xml_date_to_time(date_str)
+     puts date_str
+     result =Time.zone.parse(date_str).time if date_str
+     puts result
+     result
+   end
 end 
  

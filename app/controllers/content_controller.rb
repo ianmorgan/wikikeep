@@ -34,9 +34,8 @@ class ContentController < ApplicationController
      @update_content_command = UpdateContentCommand.new(submitted)
      if @update_content_command.valid? 
         service = ContentService.new
-        result = service.update_content(params[:id],@update_content_command.content)
-       redirect_to  :account_name => account_name, :controller => 'content', :action => 'view', :id => params[:id]
-
+        result = service.update_content_text(params[:id],@update_content_command.content,user_id)
+        redirect_to  :account_name => account_name, :controller => 'content', :action => 'view', :id => params[:id]
      end
   end
   

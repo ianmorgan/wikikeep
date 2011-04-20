@@ -33,9 +33,13 @@ class ContentService
      return content_item.id
    end
 
-   def update_content(content_item_id, content)   
+   #
+   # Update the text for a content item
+   #
+   def update_content_text(content_item_id, content, user_id)   
      content_item = ContentItem.find(content_item_id)
      content_item.content = content
+     content_item.updated_by = User.find(user_id)
      content_item.save
 
      #todo - must update lucene index
