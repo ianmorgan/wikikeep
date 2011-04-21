@@ -13,5 +13,24 @@ $(document).ready(function() {
             return true;
         }
     });
+
+    $(".content_item_summary").mouseenter(function() {
+	  $(this).addClass ("highlight_content");
+	  //$('.highlight').gradient({
+	  //    from: 'FFCC99',
+	  //     to: 'FFEEDD',
+	  //    direction: 'horizontal'
+	  //  });
+	});
+	$(".content_item_summary").mouseleave(function() {
+		
+	//	 $('.highlight').gradient({
+	//	      from: 'FFEEDD',
+	//	       to: 'FFEEDD',
+	//	      direction: 'horizontal'
+	//	    });
+		$(this).removeClass ("highlight_content");
+	});
+	
 });
 

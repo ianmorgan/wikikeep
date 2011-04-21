@@ -156,10 +156,34 @@ table.form td.field .field_with_errors input {
 -moz-border-radius: 5px 5px 5px 5px;
 }
 
-#pagecontent .content_item_summary a {
-   color:#2200CC;
-  
+
+#pagecontent .content_item_summary {
+	padding-top:2px;
+	padding-right:2px;
+	padding-left:2px;
+	padding-bottom:15px;
+	zzmargin-bottom:10px;
 }
+.highlight_content {
+	border:1px solid #FF6600;
+	margin:-1px;
+	background-color:#FFCC99;
+	background-color:#FFE0D0;  
+	-moz-border-radius: 5px 5px 5px 5px;
+}
+#pagecontent .content_item_summary h3 a {
+   color:#4400CC;
+   /*border:1px solid red;*/
+   line-height:22px;
+}
+
+#pagecontent .content_item_summary h3 {
+   font-size:16px;
+   width:80%;
+   margin-top:-2px;
+}
+
+
 
 /* text box for content entry */
 .enter_content {
