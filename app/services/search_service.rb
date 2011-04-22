@@ -23,7 +23,7 @@ class SearchService
       :last_modified => Time.new.strftime("%Y-%m-%dT%H:%M:%SZ"),
       :author => item.created_by.user_name}
       
-    document  = document.merge({:modifier_s => item.updated_by.user_name}) if item.updated_by  
+    document  = document.merge({:modifier_s => item.updated_by.given_names}) if item.updated_by  
     response = solr.add document
     response = solr.commit
     #todo - add error handling !

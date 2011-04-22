@@ -1,5 +1,10 @@
 <div class="content_item_summary">
-  <h3><%= link_to result['name'],  :controller => 'content', :action => 'view', :id => result['id']%> </h3>
+  <div class="content_item_header">
+	  <h3><%= link_to result['name'],  :controller => 'content', :action => 'view', :id => result['id']%> </h3>
+      <span class="author"><%= result['updated_by'] %>
+<%= "#{distance_of_time_in_words(result['updated_at'],Time.new.utc.localtime)} ago" if result['updated_at']  %>
+  </span>
+  </div>
   <%= result['summary'] %> </br>
   Tags: 
   <% result['tags'].each do |tag|  %> 
@@ -9,3 +14,4 @@
    (modifier = <%= result['updated_by'] %>, updated at =<%=result['updated_at']%>)  
 </div>
 
+distance_of_time_in_words

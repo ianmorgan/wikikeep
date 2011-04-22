@@ -164,24 +164,36 @@ table.form td.field .field_with_errors input {
 	padding-bottom:15px;
 	zzmargin-bottom:10px;
 }
+
 .highlight_content {
 	border:1px solid #FF6600;
 	margin:-1px;
-	background-color:#FFCC99;
 	background-color:#FFE0D0;  
 	-moz-border-radius: 5px 5px 5px 5px;
 }
+
+
+#pagecontent .content_item_summary h3 {
+   font-size:16px;
+   width:70%;
+   margin-top:-2px;
+   display:inline-block;
+}
+
 #pagecontent .content_item_summary h3 a {
    color:#4400CC;
    /*border:1px solid red;*/
    line-height:22px;
 }
 
-#pagecontent .content_item_summary h3 {
-   font-size:16px;
-   width:80%;
-   margin-top:-2px;
+#pagecontent .author {
+	text-align:right;
+	float:right;
+	width:25%;
+	font-size:10px;
 }
+
+
 
 
 
