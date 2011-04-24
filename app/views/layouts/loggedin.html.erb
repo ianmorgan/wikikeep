@@ -35,9 +35,8 @@
        }); 
 
       });
-
   </script>
-<div id="page">
+  <div id="page">
     <div id="topheader">
       <div id="headercontent">
        <div id="headermenu">
@@ -70,10 +69,13 @@
        </div>
      </td>
      <td width="260px" valign="top">
-        <%= render :partial => '/shared/tags' %>
+        <table>
+          <tr><td><%= render :partial => '/shared/tags' %></td></tr>
+          <tr><td><%= render :partial => '/shared/recent_updates' %></td></tr>
+        </table>
      </td>
-</tr>
-</table>
+     </tr>
+   </table>
    
   
 </div>
