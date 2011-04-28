@@ -1,11 +1,8 @@
-<div id="tags">
-  <div class="header">
-      Tags
-  </div>
+
   <% Account.find_by_name(account_name).tag_datas.each do |tag| %>
     <%=link_to tag.name, :controller => 'tag', :account_name => account_name, :action => 'view', :id => tag.id %>
   <% end %>
-</div>
+
 
 
 

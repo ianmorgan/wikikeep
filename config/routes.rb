@@ -12,6 +12,8 @@ Wikikeep::Application.routes.draw do
 
   match ':account_name/tag/:action(/:id)', :controller => 'tag'
   match ':account_name/tag/:action/named/:name', :controller => 'tag'
+  match ':account_name/portlets/:action/(/:id)', :controller => 'portlets'
+  
 
 
   match 'registration/:action(/:id)', :controller => 'registration'
