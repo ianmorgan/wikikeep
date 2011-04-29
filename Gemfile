@@ -10,6 +10,7 @@ gem 'rsolr'
 gem 'mongo_mapper'
 gem 'bson_ext', '1.3.0'
 gem 'SystemTimer'
+gem 'rack-offline', '0.6.1'
 # gem 'jquery-rails'
 
 # Use unicorn as the web server

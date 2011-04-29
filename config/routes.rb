@@ -13,11 +13,7 @@ Wikikeep::Application.routes.draw do
   match ':account_name/tag/:action(/:id)', :controller => 'tag'
   match ':account_name/tag/:action/named/:name', :controller => 'tag'
   match ':account_name/portlets/:action/(/:id)', :controller => 'portlets'
-  
-
-
   match 'registration/:action(/:id)', :controller => 'registration'
-  
   match 'add_content/:action(/:id)', :controller => 'add_content'
 
   scope ':account_name/admin', :as => 'admin' do
@@ -34,6 +30,8 @@ Wikikeep::Application.routes.draw do
   match 'not_implemented', :controller => 'home', :action => 'not_implemented', :as => 'not_implemented'
   match 'about', :controller => 'home', :action => 'about', :as => 'about'
 
+  #HTML5 offline 
+  match "/application.manifest" => Rails::Offline  
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
