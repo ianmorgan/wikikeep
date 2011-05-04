@@ -1,7 +1,19 @@
 
-  <% Account.find_by_name(account_name).tag_datas.each do |tag| %>
+  <% @all_tags_for_current_account.each do |tag| %>
     <%=link_to tag.name, :controller => 'tag', :account_name => account_name, :action => 'view', :id => tag.id %>
   <% end %>
+
+
+  <script type="text/html" id="all_tags_template">  
+     <li>${tag_data.name}</li>  
+  </script>  
+
+   <ol id="all_tags2">  
+  </ol>
+
+dsdsdds
+
+
 
 
 

@@ -53,6 +53,10 @@ private
     session[:current_user][:user_id]
   end
   
+  def all_tags_for_current_account
+    @all_tags ||= Account.find_by_name(account_name).tag_datas
+  end
+
 
    
   helper_method :ie6?  
