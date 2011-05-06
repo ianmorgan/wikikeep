@@ -1,20 +1,10 @@
 
-  <% @all_tags_for_current_account.each do |tag| %>
-    <%=link_to tag.name, :controller => 'tag', :account_name => account_name, :action => 'view', :id => tag.id %>
-  <% end %>
-
-
   <script type="text/html" id="all_tags_template">  
-     <li>${tag_data.name}</li>  
+     <li><a href="/<%=account_name%>/tag/view/${tag_data.id}">${tag_data.name}</a></li>
   </script>  
 
-   <ol id="all_tags2">  
-  </ol>
-
-dsdsdds
-
-
-
-
-
-
+<div id="all_tags_container">
+  <ul id="all_tags" 
+<li>aa</li>
+  </ul>
+</div>

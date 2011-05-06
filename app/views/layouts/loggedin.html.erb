@@ -11,16 +11,12 @@
   <%= stylesheet_link_tag "token-input" %>  
 
   <%= javascript_include_tag "jquery.min" %>
-
   <%= javascript_include_tag "application" %>
-
-  <%= javascript_include_tag "jquery.tokeninput" %>  
+  <!-- <%= javascript_include_tag "jquery.tokeninput" %>  -->
   <%= javascript_include_tag "jquery.tmpl" %>  
   <%= javascript_include_tag "page_decorations" %>  
-
-
-<%= javascript_include_tag "json" %>  
-<%= javascript_include_tag "jquery.offline" %>  
+  <%= javascript_include_tag "json" %>  
+  <%= javascript_include_tag "jquery.offline" %>  
 
   <%= stylesheet_link_tag 'wikikeep' %>
   <%= stylesheet_link_tag 'public' %>  <!-- wrong - should be moved out into its own loggedin style sheet -->
@@ -31,7 +27,7 @@
 
   <script type="text/javascript">
       $(document).ready(function(){
-	    //alert ("hi from jquery");
+	    alert ("hi from jquery");
         $(".initial_focus").focus();
         $("input").bind("keydown", function(event) {
            // track enter key
@@ -45,9 +41,11 @@
          }
        }); 
 
-       $('#all_tags').load('<%= url_for :controller => :portlets, :account_name => account_name, :action => :all_tags %>');
 
-      });
+      $.getJSON("/<%=account_name%>/portlets/all_tags.json", function(data) {  
+           $("#all_tags").html($("#all_tags_template").tmpl(data));      
+       });
+     });
   </script>
   <div id="page">
     <div id="topheader">
@@ -89,7 +87,8 @@
 				  <div class="header">
 				      Tags
 				  </div>
-	              <span id="all_tags">Loading...</span>
+				<%= render :partial => '/shared/tags' %>
+	            
 	            </div>
 	         </td>
 	      </tr>
