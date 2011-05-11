@@ -13,7 +13,7 @@ module Wikikeep
     # -- all .rb files in that directory are automatically loaded.
   
     # stops adding timestamp after stylesheets etc
-    ENV["RAILS_ASSET_ID"] = ""
+    # ENV["RAILS_ASSET_ID"] = ""
 
     # Custom directories with classes and modules you want to be autoloadable.
     config.autoload_paths += %W(#{config.root}/app/commands)
