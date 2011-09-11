@@ -206,14 +206,21 @@ table.form td.field .field_with_errors input {
   width:550px;
 } 
 
+/*
 #all_tags {
   width: 200px;
-  border:4px solid red;	
-  display:inline;
- 
+
+}
+*/
+
+
+td.test  {
+	width:100px;
+
+	
 }
 
-.wibble {
-	border:3px solid blue;
-	 list-style-type:none;
+table.tags {
+  width:150px;	
 }
+

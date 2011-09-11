@@ -10,7 +10,7 @@
  
   <%= stylesheet_link_tag "token-input" %>  
 
-  <%= javascript_include_tag "jquery.min" %>
+  <%= javascript_include_tag "jquery-1.6.3.min" %>
   <%= javascript_include_tag "application" %>
   <!-- <%= javascript_include_tag "jquery.tokeninput" %>  -->
   <%= javascript_include_tag "jquery.tmpl" %>  
@@ -45,7 +45,9 @@
       $.getJSON("/<%=account_name%>/portlets/all_tags.json", function(data) {  
            $("#all_tags").html($("#all_tags_template").tmpl(data));      
        });
-     });
+
+ 
+	     });
   </script>
   <div id="page">
     <div id="topheader">
