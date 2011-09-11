@@ -41,7 +41,7 @@
        }); 
 
 
-      $.getJSON("/<%=account_name%>/portlets/all_tags.json", function(data) {  
+      $.retrieveJSON("/<%=account_name%>/portlets/all_tags.json", function(data) {  
            $("#all_tags").html($("#all_tags_template").tmpl(data));      
        });
 
