@@ -7,7 +7,7 @@ gem 'rails', '3.0.10'
 
 gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'rsolr'
-gem 'mongo_mapper'
+gem 'mongo_mapper', '0.9.0'
 gem 'bson_ext', '1.3.0'
 gem 'SystemTimer'
 gem 'rack-offline', '0.6.1'
