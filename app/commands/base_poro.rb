@@ -8,11 +8,21 @@ class  BasePoro
     include ActiveModel::Conversion
     include ActiveModel::Validations
 
-    def initialize
-      @errors = ActiveModel::Errors.new(self)
+#    def initialize
+#      @errors = ActiveModel::Errors.new(self)
+#    end
+
+    attr_accessor :attributes
+    attr_reader   :errors
+    
+    
+    def initialize(attributes={})
+        @errors = ActiveModel::Errors.new(self)
+         @attributes = attributes.stringify_keys.inject({}) do |x,y|
+             respond_to?("#{y.first}=") && send("#{y.first}=", y.last) ? x.merge(y.first => y.last) : x
+        end
     end
 
-    attr_reader   :errors
     
     # The following methods are needed to be minimally implemented
 

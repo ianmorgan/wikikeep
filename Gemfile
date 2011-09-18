@@ -1,15 +1,28 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.10' 
+gem 'rails', '3.1.0' 
+
+# Gems used only for assets and not required
+# in production environments by default.
+group :assets do
+  gem 'sass-rails', "  ~> 3.1.0"
+  gem 'coffee-rails', "~> 3.1.0"
+  gem 'uglifier'
+end
+
+
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3-ruby', :require => 'sqlite3'
+gem 'sqlite3'
+# gem 'sqlite3-ruby', :require => 'sqlite3'
 gem 'rsolr'
-gem 'mongo_mapper', '0.9.0'
-gem 'bson_ext', '1.3.0'
-gem 'SystemTimer'
+gem 'mongo_mapper', '0.9.2'
+# gem 'bson_ext', '1.3.1'
+
+gem 'bson_ext'
+gem 'SystemTimer','1.2.3'
 gem 'rack-offline', '0.6.1'
 # gem 'jquery-rails'
 

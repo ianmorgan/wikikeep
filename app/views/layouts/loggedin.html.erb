@@ -8,19 +8,14 @@
   <title>WikiKeep: <%= yield :title %></title>
 
  
-  <%= stylesheet_link_tag "token-input" %>  
-
-  <%= javascript_include_tag "jquery-1.6.3.min" %>
+  <%= stylesheet_link_tag "application" %>  
   <%= javascript_include_tag "application" %>
-  <!-- <%= javascript_include_tag "jquery.tokeninput" %>  -->
-  <%= javascript_include_tag "jquery.tmpl" %>  
+
+ 
   <%= javascript_include_tag "page_decorations" %>  
   <%= javascript_include_tag "json" %>  
   <%= javascript_include_tag "jquery.offline" %>  
 
-  <%= stylesheet_link_tag 'wikikeep' %>
-  <%= stylesheet_link_tag 'public' %>  <!-- wrong - should be moved out into its own loggedin style sheet -->
-  <%= stylesheet_link_tag 'ie6_tweaks' if ie6? %>  
 
 </head>
 <body>

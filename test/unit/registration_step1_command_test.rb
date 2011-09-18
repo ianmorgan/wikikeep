@@ -36,8 +36,8 @@ class RegistrationStep1CommandTest < ActiveSupport::TestCase
   end
 
 
-  test "valid account name " do
-     @command.account_name = 'account_name01' 
+  test "valid account name" do
+     @command = RegistrationStep1Command.new :account_name => 'account_name01'
      assert @command.valid?  
   end
 

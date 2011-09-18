@@ -1,10 +1,6 @@
-class RegistrationStep2Command < BaseCommand 
+class RegistrationStep2Command < BasePoro2
 
-  column :user_name, :string
-  column :given_names, :string
-  column :family_name, :string 
-  column :password, :string 
-  column :password_confirmation, :string 
+  attr_accessor :user_name, :given_names,:family_name,:password,:password_confirmation
 
 
   validates_presence_of :user_name, :password, :family_name, :message => 'must be provided'

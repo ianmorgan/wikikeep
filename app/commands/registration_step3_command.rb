@@ -1,4 +1,4 @@
-class RegistrationStep3Command < BasePoro
+class RegistrationStep3Command < BasePoro2
   attr_accessor :default_visibility
  
    
