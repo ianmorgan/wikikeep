@@ -25,6 +25,6 @@ Wikikeep::Application.configure do
   
   # assets pipeline
   config.assets.compress = false
-  config.assets.debug = true
+  config.assets.debug = false
 end
 
