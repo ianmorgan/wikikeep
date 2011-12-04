@@ -3,6 +3,10 @@ class User < ActiveRecord::Base
   belongs_to :account
 
   validates_presence_of :user_name, :family_name, :password_hash
+  
+  def nick_name 
+    given_names
+  end
 
 
   # Checks to see if there is a user who 

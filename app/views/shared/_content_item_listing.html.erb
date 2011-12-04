@@ -1,16 +1,20 @@
 <div class="content_item_summary">
   <div class="content_item_header">
 	  <h3><%= link_to result['name'],  :controller => 'content', :action => 'view', :id => result['id']%> </h3>
-      <span class="author"><%= result['updated_by'] %>
-<%= "#{distance_of_time_in_words(result['updated_at'],Time.new.utc.localtime)} ago" if result['updated_at']  %>
+      <span class="author"><%= result[:last_modified][:name] %>
+<%= "#{distance_of_time_in_words(result[:last_modified][:date],Time.new.utc.localtime)} ago"   %>
   </span>
   </div>
   <%= result['summary'] %> </br>
   Tags: 
   <% result['tags'].each do |tag|  %> 
      <%= link_to tag,  :account_name => account_name, :controller => 'tag', :action => 'view', :name => tag, :id => nil %> &nbsp;  
-  <% end %>  
-   (author = <%= result['created_by'] %>, created  at =<%=result['created_at']%>) 
-   (modifier = <%= result['updated_by'] %>, updated at =<%=result['updated_at']%>)  
+  <% end %>
+ <div class="credits">  
+   Created by <%= result[:created][:name] %> at <%=result[:created][:date].to_formatted_s(:nice)%>. 
+   <% if result[:updated]  %>
+     Last changed by  <%= result[:updated][:name] %> at <%=result[:updated][:date].to_formatted_s(:nice)%>
+   <% end %>
+ </div>
 </div>
 

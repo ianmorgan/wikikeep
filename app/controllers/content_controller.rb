@@ -31,10 +31,12 @@ class ContentController < ApplicationController
 
   def update 
      submitted = params[:update_content_command]
+     puts submitted
      @update_content_command = UpdateContentCommand.new(submitted)
+     puts @update_content_command.content
      if @update_content_command.valid? 
         service = ContentService.new
-        result = service.update_content_text(params[:id],@update_content_command.content,user_id)
+        result = service.update_content_text(params[:id],@update_content_command.attributes[:content],user_id)
         redirect_to  :account_name => account_name, :controller => 'content', :action => 'view', :id => params[:id]
      end
   end

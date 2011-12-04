@@ -5,3 +5,19 @@ Wikikeep is a simple wiki like website for keeping track of all those annoying l
 
 It includes the Apache SOLR engine for searching 
 
+F*** unix notes (on amazon image )
+---------------
+
+For zlib problems 
+-----------------
+sudo yum install zlib1g-dev  (maybe needed?)
+rvm pkg install zlib 
+rvm install 1.9.2 -C --with-zlib-dir=$rvm_path/usr
+
+For lib ssl problmes 
+sudo yum groupinstall development-tools development-libs
+then reinstall with rvm 
+
+
+
+

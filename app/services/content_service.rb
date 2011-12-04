@@ -37,12 +37,13 @@ class ContentService
    # Update the text for a content item
    #
    def update_content_text(content_item_id, content, user_id)   
+     puts "id = #{content_item_id}, user id = #{user_id} content= #{content}"
      content_item = ContentItem.find(content_item_id)
      content_item.content = content
      content_item.updated_by = User.find(user_id)
      content_item.save
-
-     #todo - must update lucene index
+     puts "content item saved!!"
+  puts "content = #{content_item.content}"
      search_service = SearchService.new
      search_service.add_content_item content_item
    end

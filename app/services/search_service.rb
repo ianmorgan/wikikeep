@@ -8,10 +8,12 @@ class SearchService
 
  
   #
-  # Adds a new content item to the 
+  # Adds a new content item to the index 
   #  
   #
   def add_content_item(item)
+    puts "here i am"
+    puts item.content
      document = 
      {:id => item.id, 
       :name => item.name, 
@@ -21,9 +23,10 @@ class SearchService
       :text => item.content,
       :created_at_dt => item.created_at.strftime("%Y-%m-%dT%H:%M:%SZ"),
       :last_modified => Time.new.strftime("%Y-%m-%dT%H:%M:%SZ"),
-      :author => item.created_by.user_name}
+      :author => item.created_by.nick_name}
       
-    document  = document.merge({:modifier_s => item.updated_by.given_names}) if item.updated_by  
+      puts "and here"
+    document  = document.merge({:modifier_s => item.updated_by.nick_name}) if item.updated_by  
     response = solr.add document
     response = solr.commit
     #todo - add error handling !
@@ -66,6 +69,18 @@ class SearchService
      item['updated_by'] = doc['modifier_s']
      item['created_at'] = xml_date_to_time(doc['created_at_dt'])
      item['updated_at'] = xml_date_to_time(doc['last_modified'])
+     
+     created_by=Hash.new
+     created_by[:name] = doc['author']
+     created_by[:date] = xml_date_to_time(doc['created_at_dt'])  || Time.new #fudge for old data
+     item[:created] = created_by
+     if doc['modifier_s']
+         updated_by=Hash.new
+         updated_by[:name] = doc['modifier_s']
+         updated_by[:date] = xml_date_to_time(doc['last_modified'])
+         item[:updated] = updated_by
+      end
+      item[:last_modified] = item[:updated] || item [:created]
      results << item
   end
   return results
@@ -77,9 +92,9 @@ private
   end
   
   def xml_date_to_time(date_str)
-     puts date_str
-     result =Time.zone.parse(date_str).time if date_str
-     puts result
+     #puts date_str
+     result =Time.zone.parse(date_str) if date_str
+     #puts result
      result
    end
 end 
