@@ -1,7 +1,15 @@
 
+<h2 class="header">Home</h2>
 
-<h2>Content Home </h2>
+<div class="markedup_content">  
+ <p>todo - default home page, list recent content items etc </p>
 
-<p>todo - default home page, list recent content items etc </p>
+  Recently items
+  <ul>
+  <% @recent_items.each do |i| %>
+    <li><%= link_to i.name, :action => :view, :id => i.id %></li>
+  <% end %>
+  </ul>
+</div>
 
- 
+

@@ -23,3 +23,11 @@ lulu:
   family_name: Lu
   account_id:  2 
   password_hash: woof
+  
+system:
+  id:          4
+  user_name:   system@wikikeep.com
+  given_names: System 
+  family_name: System
+  account_id:  3 
+  password_hash: password

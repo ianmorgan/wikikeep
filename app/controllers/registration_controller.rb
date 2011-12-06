@@ -69,6 +69,7 @@ class RegistrationController < ApplicationController
      attrs = attrs.merge(session[:registration_data][:step2].attributes)
      attrs = attrs.symbolize_keys
      result = RegistrationService.new.create_account attrs 
+     add_default_content_pages (attrs[:account_name])
   end
 
 
@@ -83,6 +84,21 @@ private
      session[:registration_step] = step 
      redirect_to :action => step 
   end
+  
+  def add_default_content_pages(account_name) 
+    service = ContentService.new
+    
+    new_account_id = Account.find_by_name(account_name).id
+    system_user_id = 4
+    
+    content = Hash.new
+    content[:name] = 'Welcome'
+    content[:content] = read_content_template('welcome')
+    content[:tags] = "Wikikeep"
+    result = service.add_content(new_account_id, system_user_id, content)
+    
+  end
+
 
 end
 

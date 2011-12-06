@@ -57,9 +57,18 @@ private
     @all_tags ||= Account.find_by_name(account_name).tag_datas
   end
 
+  def read_content_template(template_name)
+     File.new( "#{Rails.root}/content/#{template_name}", "r").read
+  end
 
+  def markup_content(content)
+     return "" if content.nil?
+
+     r = RedCloth.new content
+     r.to_html.html_safe    
+   end
    
-  helper_method :ie6?  
+  helper_method :ie6? , :markup_content
 end
 
 

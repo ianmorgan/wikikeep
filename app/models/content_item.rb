@@ -9,6 +9,8 @@ class ContentItem < ActiveRecord::Base
   validates_presence_of :name, :content, :account
 
   scope :for_account_id, lambda { |account_id| where("account_id = ?", account_id) }
+  
+  scope :recent, order('updated_at').limit(5)
 
   def markedup_content
     return "" if content.nil?

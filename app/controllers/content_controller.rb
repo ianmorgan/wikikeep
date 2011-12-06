@@ -31,9 +31,7 @@ class ContentController < ApplicationController
 
   def update 
      submitted = params[:update_content_command]
-     puts submitted
      @update_content_command = UpdateContentCommand.new(submitted)
-     puts @update_content_command.content
      if @update_content_command.valid? 
         service = ContentService.new
         result = service.update_content_text(params[:id],@update_content_command.attributes[:content],user_id)
@@ -48,7 +46,23 @@ class ContentController < ApplicationController
 
 
   def home
-     @content_items = ContentItem.for_account_id(account_id).find(:all) 
+    #todo - should move to home controller ?
+    @user = User.find(user_id)
+    if @user.viewed_welcome_page
+       @recent_items = ContentItem.for_account_id(account_id).recent
+    else
+       redirect_to :action => 'welcome' 
+    
+    end
+  end
+  
+  def welcome
+    user = User.find(user_id)
+    user.viewed_welcome_page = true
+    user.save!
+    
+    @content = read_content_template('welcome')
+    
   end
 
 
